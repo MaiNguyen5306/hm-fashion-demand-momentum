@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==============================
+# H&M Fashion Demand Project Data
+# ==============================
+
+# Raw and generated data should stay local
+data/raw/**
+data/interim/**
+data/processed/**
+
+# Keep the folder structure in GitHub
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Local DuckDB databases
+*.duckdb
+*.duckdb.wal
+
+# Windows system files
+Thumbs.db
