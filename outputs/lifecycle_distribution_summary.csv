@@ -1,0 +1,2 @@
+articles,min_total_units,p25_total_units,median_total_units,p75_total_units,p90_total_units,min_active_days,p25_active_days,median_active_days,p75_active_days,p90_active_days,min_lifespan,p25_lifespan,median_lifespan,p75_lifespan,p90_lifespan
+104547,1.0,14.0,65.0,286.0,793.0,1,11.0,39.0,102.0,179.0,1,86.0,206.0,370.0,511.0

@@ -1,0 +1,6 @@
+scenario,eligible_articles,pct_of_articles
+A: >= 10 active days,80374,76.88
+B: >= 20 active days + 50 units,56373,53.92
+C: >= 30 active days + 100 units,44014,42.1
+D: >= 60 active days + 250 units,27244,26.06
+E: C + complete observed lifecycle,31833,30.45
