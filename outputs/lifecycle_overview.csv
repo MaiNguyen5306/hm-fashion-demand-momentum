@@ -1,0 +1,2 @@
+articles,earliest_first_sale,latest_last_sale,avg_observed_lifespan,median_observed_lifespan,avg_active_sales_days,median_active_sales_days,left_censored_articles,right_censored_articles,total_units
+104547,2018-09-20,2020-09-22,242.0,206.0,71.2,39.0,11542.0,7971.0,31788324.0
