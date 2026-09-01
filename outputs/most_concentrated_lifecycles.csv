@@ -1,0 +1,21 @@
+article_id,prod_name,product_type_name,garment_group_name,observed_lifespan_days,total_units,days_to_50_pct,days_to_80_pct,max_7d_units,max_7d_demand_share_pct,post_peak_share_pct
+0933838002,Megan Hoodie Price Item,Sweater,Jersey Fancy,52,547.0,0,0,490.0,89.58,13.35
+0759871024,Tilda tank,Vest top,Jersey Basic,165,350.0,2,2,301.0,86.0,91.43
+0706108001,EDC LELLE KNIT,Sweater,Special Offers,114,971.0,15,17,817.0,84.14,27.39
+0902445002,CS Goofy,Blouse,Blouses,60,313.0,2,3,262.0,83.71,98.4
+0733803011,Racing shorts(1),Shorts,Jersey Basic,142,242.0,4,4,200.0,82.64,88.43
+0690611001,Andrew,Sweater,Knitwear,375,1462.0,10,12,1205.0,82.42,37.55
+0880322004,Bird ss,T-shirt,Jersey Fancy,72,299.0,3,5,244.0,81.61,73.91
+0879989006,MOON LACE STRAP TOP (MAKE C/O),Vest top,Jersey Fancy,86,276.0,5,7,223.0,80.8,57.97
+0890195001,Romana Sandal,Sandals,Shoes,92,246.0,2,3,197.0,80.08,84.15
+0651475001,Miller blouse,Blouse,Blouses,135,317.0,4,7,253.0,79.81,87.38
+0802927001,Tina Fur,Jacket,Outdoor,83,185.0,4,9,147.0,79.46,96.76
+0888331008,Bonnie SL set (J),Pyjama set,"Under-, Nightwear",79,406.0,4,7,320.0,78.82,79.06
+0825720010,Fidde tee(1),T-shirt,Jersey Basic,60,289.0,3,7,227.0,78.55,83.04
+0863570001,Anton,Vest top,Knitwear,82,634.0,2,18,498.0,78.55,92.27
+0830538001,Folly,Dress,Knitwear,113,520.0,3,11,407.0,78.27,81.15
+0824351001,Felicia HW Woven Frill Shorts,Shorts,Shorts,116,174.0,2,12,136.0,78.16,88.51
+0822992003,Sake Heel,Heels,Shoes,138,157.0,3,24,121.0,77.07,98.73
+0779890001,FF Jade shirt PI,Jacket,Special Offers,329,1458.0,6,12,1123.0,77.02,28.6
+0756320028,Lindsay Sl-set (W),Pyjama set,"Under-, Nightwear",81,129.0,3,23,99.0,76.74,72.87
+0715624041,Becka hoodie,Hoodie,Jersey Basic,107,244.0,6,8,186.0,76.23,63.52
