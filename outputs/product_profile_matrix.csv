@@ -1,0 +1,25 @@
+lifecycle_profile,momentum_tier,articles
+Balanced Lifecycle,Extreme Momentum,2221
+Balanced Lifecycle,High Momentum,2758
+Balanced Lifecycle,Low Momentum,3386
+Balanced Lifecycle,Typical Momentum,8577
+Long Tail,Extreme Momentum,204
+Long Tail,High Momentum,574
+Long Tail,Low Momentum,1528
+Long Tail,Typical Momentum,2649
+Partial Lifecycle,Extreme Momentum,1271
+Partial Lifecycle,High Momentum,1937
+Partial Lifecycle,Low Momentum,3075
+Partial Lifecycle,Typical Momentum,5898
+Rapid Spike,Extreme Momentum,535
+Rapid Spike,High Momentum,788
+Rapid Spike,Low Momentum,1889
+Rapid Spike,Typical Momentum,2026
+Slow Burn,Extreme Momentum,20
+Slow Burn,High Momentum,194
+Slow Burn,Low Momentum,1042
+Slow Burn,Typical Momentum,2058
+Sustained Performer,Extreme Momentum,151
+Sustained Performer,High Momentum,351
+Sustained Performer,Low Momentum,79
+Sustained Performer,Typical Momentum,803

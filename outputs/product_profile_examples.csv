@@ -1,0 +1,31 @@
+lifecycle_profile,momentum_tier,article_id,prod_name,product_type_name,garment_group_name,total_units,observed_lifespan_days,days_to_80_pct,max_7d_demand_share_pct,post_peak_share_pct,peak_relative_velocity
+Balanced Lifecycle,High Momentum,0689109001,Timeless Sports Top,Bikini top,Swimwear,10107.0,551,57,19.06,76.07,83.51
+Balanced Lifecycle,Typical Momentum,0599580020,Timeless Midrise Brief,Swimwear bottom,Swimwear,9344.0,581,145,6.44,33.5,59.48
+Balanced Lifecycle,High Momentum,0692930001,The Low Line Highwaist,Swimwear bottom,Swimwear,8782.0,441,80,16.85,77.15,71.03
+Balanced Lifecycle,Typical Momentum,0684209001,Simple as That Triangle Top,Bikini top,Swimwear,8139.0,553,121,8.94,21.02,39.49
+Balanced Lifecycle,Typical Momentum,0772005009,Tilly.,T-shirt,Jersey Basic,7129.0,477,140,9.27,71.36,43.24
+Long Tail,High Momentum,0689109003,Timeless Sports Top,Bikini top,Swimwear,8535.0,617,100,10.99,87.99,68.78
+Long Tail,Typical Momentum,0712587003,Bow HW paperwaist,Trousers,Trousers,7990.0,630,175,5.06,82.08,59.5
+Long Tail,High Momentum,0692930003,The Low Line Highwaist,Swimwear bottom,Swimwear,7529.0,581,114,10.82,87.9,64.32
+Long Tail,High Momentum,0727029001,S Timeless High Wide Side Brie,Swimwear bottom,Swimwear,6681.0,537,121,7.23,96.15,74.48
+Long Tail,High Momentum,0747939002,Love Shack Cheeky Brief,Swimwear bottom,Swimwear,5785.0,477,102,10.54,79.29,73.89
+Partial Lifecycle,Extreme Momentum,0706016001,Jade HW Skinny Denim TRS,Trousers,Trousers,50287.0,666,500,6.25,42.81,177.19
+Partial Lifecycle,Extreme Momentum,0706016002,Jade HW Skinny Denim TRS,Trousers,Trousers,35043.0,691,502,3.95,35.37,117.01
+Partial Lifecycle,Typical Momentum,0372860001,7p Basic Shaftless,Socks,Socks and Tights,31718.0,734,600,1.85,97.77,44.61
+Partial Lifecycle,Typical Momentum,0610776002,Tilly (1),T-shirt,Jersey Basic,30199.0,734,608,4.54,32.47,48.96
+Partial Lifecycle,High Momentum,0464297007,Greta Thong Mynta Low 3p,Underwear bottom,"Under-, Nightwear",25025.0,734,563,2.82,53.51,69.85
+Rapid Spike,Low Momentum,0758064001,LS Reggipetto Triangle Top,Bikini top,Swimwear,5123.0,419,14,64.01,46.65,12.4
+Rapid Spike,Typical Momentum,0559630026,Timeless Triangle Top,Bikini top,Swimwear,4848.0,176,54,37.4,67.64,61.44
+Rapid Spike,Typical Momentum,0758050001,LS Olivia Cheeky Tanga,Swimwear bottom,Swimwear,4732.0,451,34,51.54,56.64,39.73
+Rapid Spike,Typical Momentum,0758049001,LS Olivia Triangle Top,Bikini top,Swimwear,4651.0,427,33,52.23,55.13,35.56
+Rapid Spike,Low Momentum,0758060001,LS Reggipetto Tie Tanga,Swimwear bottom,Swimwear,4642.0,388,14,62.84,49.14,8.88
+Slow Burn,Typical Momentum,0713707001,POW Blouse on fire,Blouse,Blouses,686.0,600,279,6.85,71.57,44.31
+Slow Burn,Typical Momentum,0556560005,SKINNY Cheapo 79,Trousers,Trousers Denim,685.0,712,358,6.13,92.26,40.26
+Slow Burn,High Momentum,0783978004,Agata RTW blouse,Blouse,Blouses,685.0,374,295,9.64,31.24,67.0
+Slow Burn,Typical Momentum,0738298001,Spider HW wide cropped,Trousers,Trousers,685.0,587,265,8.61,47.15,60.0
+Slow Burn,High Momentum,0516000075,Agnes LS R-neck,T-shirt,Jersey Fancy,684.0,704,223,9.36,70.32,67.06
+Sustained Performer,Typical Momentum,0759871002,Tilda tank,Vest top,Jersey Basic,26329.0,567,447,3.81,13.43,39.62
+Sustained Performer,Typical Momentum,0599580017,Timeless Midrise Brief,Swimwear bottom,Swimwear,15230.0,667,451,5.14,55.32,45.07
+Sustained Performer,Extreme Momentum,0741356002,Pamela Shorts HW,Shorts,Shorts,14454.0,526,403,8.91,36.93,107.32
+Sustained Performer,Typical Momentum,0688537011,Simple as that Cheeky Tanga,Swimwear bottom,Swimwear,12778.0,542,412,7.0,34.54,54.82
+Sustained Performer,High Momentum,0759871001,Tilda tank,Vest top,Jersey Basic,12226.0,566,414,6.73,30.45,80.71
