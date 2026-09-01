@@ -1,0 +1,26 @@
+article_id,prod_name,product_type_name,garment_group_name,date,units_ma7,avg_units_per_active_day,demand_velocity,velocity_pct_of_typical_day,velocity_pct_of_peak,daily_velocity_percentile,daily_relative_velocity_percentile
+0706016001,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-11-25,196.86,75.51,133.79,177.19,29.81,100.0,99.82
+0706016001,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-11-26,370.43,75.51,115.14,152.49,25.65,100.0,99.85
+0562245018,Luna skinny RW,Trousers,Trousers,2019-11-28,143.86,20.35,90.5,444.8,37.78,100.0,99.97
+0573085033,Madison skinny HW (1),Trousers,Trousers,2019-11-28,177.71,9.92,87.64,883.17,43.73,100.0,100.0
+0573085033,Madison skinny HW (1),Trousers,Trousers,2019-11-27,25.14,9.92,78.29,788.88,39.06,100.0,100.0
+0562245046,Luna skinny RW,Trousers,Trousers,2019-11-28,142.71,28.27,68.79,243.35,28.8,99.99,99.69
+0828114001,Esmeralda,Sweater,Knitwear,2019-11-25,43.86,16.71,62.43,373.53,41.82,100.0,100.0
+0706016025,Jade Denim HW trs,Trousers,Trousers,2019-11-25,48.43,11.36,61.36,540.3,36.52,99.99,100.0
+0706016002,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-11-25,77.0,51.16,59.86,117.01,30.27,99.99,99.11
+0824497001,Olga LL PJ (J) BF,Pyjama set,"Under-, Nightwear",2019-11-25,143.71,20.08,58.29,290.23,28.55,99.98,99.99
+0717490065,Cat Tee.,T-shirt,Jersey Basic,2020-04-07,102.71,26.71,56.93,213.13,29.78,100.0,99.99
+0706016002,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-11-26,163.71,51.16,56.07,109.61,28.36,100.0,99.31
+0706016025,Jade Denim HW trs,Trousers,Trousers,2019-11-26,130.29,11.36,54.29,478.03,32.31,99.99,100.0
+0828114001,Esmeralda,Sweater,Knitwear,2019-11-26,133.71,16.71,52.71,315.41,35.31,99.99,100.0
+0706016001,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-11-24,102.86,75.51,51.43,68.11,11.46,100.0,99.45
+0882888002,Agneta jumpsuit,Trousers,Jersey Fancy,2020-06-14,82.29,18.91,50.0,264.48,38.59,100.0,99.95
+0706016003,Jade HW Skinny Denim TRS,Trousers,Trousers,2019-09-25,108.71,33.09,49.79,150.48,28.4,100.0,99.67
+0564786001,KARIN sports bra,Bra,Jersey Fancy,2019-11-28,44.71,16.38,49.36,301.39,36.6,99.99,99.85
+0562245018,Luna skinny RW,Trousers,Trousers,2019-11-27,56.71,20.35,49.0,240.83,20.45,100.0,99.93
+0562245001,Luna skinny RW,Trousers,Trousers,2019-11-28,80.86,28.7,48.79,169.98,18.07,99.98,99.35
+0705732001,East HW tapered,Trousers,Trousers,2019-06-16,64.71,12.61,48.79,387.01,24.8,100.0,100.0
+0772902001,Haze LS,Top,Jersey Basic,2019-11-25,87.0,33.2,48.64,146.5,24.1,99.98,99.57
+0562245046,Luna skinny RW,Trousers,Trousers,2019-11-29,236.71,28.27,48.07,170.07,20.13,100.0,99.9
+0562245018,Luna skinny RW,Trousers,Trousers,2019-11-29,237.71,20.35,47.71,234.51,19.92,100.0,99.95
+0774997001,Ariel playsuit,Trousers,Trousers,2019-03-18,76.29,23.15,47.0,203.03,28.71,100.0,100.0
