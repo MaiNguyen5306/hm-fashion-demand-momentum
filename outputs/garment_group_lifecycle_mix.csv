@@ -1,0 +1,104 @@
+garment_group_name,lifecycle_profile,articles,profile_share_pct
+Accessories,Balanced Lifecycle,1496,53.01
+Accessories,Slow Burn,491,17.4
+Accessories,Long Tail,416,14.74
+Accessories,Rapid Spike,335,11.87
+Accessories,Sustained Performer,84,2.98
+Blouses,Balanced Lifecycle,1421,51.5
+Blouses,Long Tail,500,18.12
+Blouses,Rapid Spike,480,17.4
+Blouses,Slow Burn,231,8.37
+Blouses,Sustained Performer,127,4.6
+Dressed,Balanced Lifecycle,168,52.17
+Dressed,Rapid Spike,76,23.6
+Dressed,Long Tail,49,15.22
+Dressed,Slow Burn,26,8.07
+Dressed,Sustained Performer,3,0.93
+Dresses Ladies,Balanced Lifecycle,1347,50.87
+Dresses Ladies,Rapid Spike,649,24.51
+Dresses Ladies,Long Tail,395,14.92
+Dresses Ladies,Slow Burn,189,7.14
+Dresses Ladies,Sustained Performer,68,2.57
+Dresses/Skirts girls,Balanced Lifecycle,68,71.58
+Dresses/Skirts girls,Long Tail,17,17.89
+Dresses/Skirts girls,Slow Burn,6,6.32
+Dresses/Skirts girls,Rapid Spike,4,4.21
+Jersey Basic,Balanced Lifecycle,995,52.26
+Jersey Basic,Rapid Spike,273,14.34
+Jersey Basic,Long Tail,242,12.71
+Jersey Basic,Slow Burn,239,12.55
+Jersey Basic,Sustained Performer,155,8.14
+Jersey Fancy,Balanced Lifecycle,3533,56.9
+Jersey Fancy,Long Tail,950,15.3
+Jersey Fancy,Rapid Spike,936,15.07
+Jersey Fancy,Slow Burn,555,8.94
+Jersey Fancy,Sustained Performer,235,3.78
+Knitwear,Balanced Lifecycle,1275,55.82
+Knitwear,Rapid Spike,479,20.97
+Knitwear,Long Tail,306,13.4
+Knitwear,Slow Burn,163,7.14
+Knitwear,Sustained Performer,61,2.67
+Outdoor,Balanced Lifecycle,586,57.34
+Outdoor,Long Tail,160,15.66
+Outdoor,Rapid Spike,135,13.21
+Outdoor,Slow Burn,122,11.94
+Outdoor,Sustained Performer,19,1.86
+Shirts,Balanced Lifecycle,314,61.81
+Shirts,Slow Burn,88,17.32
+Shirts,Long Tail,55,10.83
+Shirts,Rapid Spike,47,9.25
+Shirts,Sustained Performer,4,0.79
+Shoes,Balanced Lifecycle,715,58.04
+Shoes,Rapid Spike,177,14.37
+Shoes,Long Tail,173,14.04
+Shoes,Slow Burn,136,11.04
+Shoes,Sustained Performer,31,2.52
+Shorts,Balanced Lifecycle,428,62.57
+Shorts,Rapid Spike,105,15.35
+Shorts,Long Tail,83,12.13
+Shorts,Slow Burn,36,5.26
+Shorts,Sustained Performer,32,4.68
+Skirts,Balanced Lifecycle,361,49.79
+Skirts,Rapid Spike,152,20.97
+Skirts,Long Tail,133,18.34
+Skirts,Slow Burn,46,6.34
+Skirts,Sustained Performer,33,4.55
+Socks and Tights,Balanced Lifecycle,231,50.77
+Socks and Tights,Slow Burn,86,18.9
+Socks and Tights,Long Tail,63,13.85
+Socks and Tights,Rapid Spike,51,11.21
+Socks and Tights,Sustained Performer,24,5.27
+Special Offers,Balanced Lifecycle,94,36.72
+Special Offers,Rapid Spike,88,34.38
+Special Offers,Long Tail,59,23.05
+Special Offers,Slow Burn,14,5.47
+Special Offers,Sustained Performer,1,0.39
+Swimwear,Balanced Lifecycle,625,50.28
+Swimwear,Rapid Spike,225,18.1
+Swimwear,Long Tail,180,14.48
+Swimwear,Sustained Performer,121,9.73
+Swimwear,Slow Burn,92,7.4
+Trousers,Balanced Lifecycle,1043,46.88
+Trousers,Long Tail,420,18.88
+Trousers,Rapid Spike,338,15.19
+Trousers,Slow Burn,305,13.71
+Trousers,Sustained Performer,119,5.35
+Trousers Denim,Balanced Lifecycle,363,43.84
+Trousers Denim,Long Tail,148,17.87
+Trousers Denim,Slow Burn,133,16.06
+Trousers Denim,Rapid Spike,106,12.8
+Trousers Denim,Sustained Performer,78,9.42
+"Under-, Nightwear",Balanced Lifecycle,1458,54.59
+"Under-, Nightwear",Long Tail,446,16.7
+"Under-, Nightwear",Rapid Spike,353,13.22
+"Under-, Nightwear",Slow Burn,231,8.65
+"Under-, Nightwear",Sustained Performer,183,6.85
+Unknown,Balanced Lifecycle,376,43.47
+Unknown,Rapid Spike,223,25.78
+Unknown,Long Tail,148,17.11
+Unknown,Slow Burn,112,12.95
+Unknown,Sustained Performer,6,0.69
+Woven/Jersey/Knitted mix Baby,Balanced Lifecycle,45,59.21
+Woven/Jersey/Knitted mix Baby,Slow Burn,13,17.11
+Woven/Jersey/Knitted mix Baby,Long Tail,12,15.79
+Woven/Jersey/Knitted mix Baby,Rapid Spike,6,7.89

@@ -1,0 +1,21 @@
+garment_group_name,eligible_articles,complete_articles,sustained_share_pct,rapid_spike_share_pct,long_tail_share_pct,extreme_momentum_share_pct,behavior
+Swimwear,1747,1243.0,9.73,18.1,14.48,5.78,Sustained Performer
+Trousers Denim,1425,828.0,9.42,12.8,17.87,7.65,Sustained Performer
+Jersey Basic,3150,1904.0,8.14,14.34,12.71,10.16,Sustained Performer
+"Under-, Nightwear",3858,2671.0,6.85,13.22,16.7,10.91,Sustained Performer
+Trousers,3218,2225.0,5.35,15.19,18.88,11.22,Sustained Performer
+Special Offers,307,256.0,0.39,34.38,23.05,12.7,Rapid Spike
+Unknown,1046,865.0,0.69,25.78,17.11,4.88,Rapid Spike
+Dresses Ladies,3316,2648.0,2.57,24.51,14.92,13.54,Rapid Spike
+Dressed,482,322.0,0.93,23.6,15.22,14.52,Rapid Spike
+Knitwear,3322,2284.0,2.67,20.97,13.4,17.19,Rapid Spike
+Special Offers,307,256.0,0.39,34.38,23.05,12.7,Long Tail
+Trousers,3218,2225.0,5.35,15.19,18.88,11.22,Long Tail
+Skirts,956,725.0,4.55,20.97,18.34,10.98,Long Tail
+Blouses,3702,2759.0,4.6,17.4,18.12,10.78,Long Tail
+Trousers Denim,1425,828.0,9.42,12.8,17.87,7.65,Long Tail
+Knitwear,3322,2284.0,2.67,20.97,13.4,17.19,Extreme Momentum
+Dressed,482,322.0,0.93,23.6,15.22,14.52,Extreme Momentum
+Dresses Ladies,3316,2648.0,2.57,24.51,14.92,13.54,Extreme Momentum
+Outdoor,1417,1022.0,1.86,13.21,15.66,12.91,Extreme Momentum
+Special Offers,307,256.0,0.39,34.38,23.05,12.7,Extreme Momentum
