@@ -3,3 +3,5 @@ duckdb==1.5.5
 pyarrow==25.0.1
 jupyter==1.1.1
 matplotlib==3.11.1
+streamlit==1.63.0
+plotly==7.0.0
