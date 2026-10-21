@@ -481,7 +481,7 @@ concentrated = con.execute(
 
     WHERE complete_lifecycle = 1
 
-    ORDER BY max_7d_demand_share_pct DESC
+    ORDER BY max_7d_demand_share_pct DESC, article_id ASC
 
     LIMIT 20
     """
@@ -526,7 +526,7 @@ sustained = con.execute(
 
     ORDER BY
         max_7d_demand_share_pct ASC,
-        total_units DESC
+        total_units DESC, article_id ASC
 
     LIMIT 20
     """

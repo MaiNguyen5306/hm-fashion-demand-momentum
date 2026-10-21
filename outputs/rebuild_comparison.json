@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "comparison": "Row-order independent; numeric rtol=atol=1e-9",
+  "files": {
+    "catalog_daily_momentum.csv": {
+      "passed": true,
+      "rows": 734
+    },
+    "catalog_surge_daily_summary.csv": {
+      "passed": true,
+      "rows": 734
+    },
+    "category_insights_validation.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "channel_summary.csv": {
+      "passed": true,
+      "rows": 2
+    },
+    "contextual_momentum_validation.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "cumulative_lifecycle_distribution.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "cumulative_lifecycle_validation.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "garment_group_behavior_rankings.csv": {
+      "passed": true,
+      "rows": 20
+    },
+    "garment_group_business_summary.csv": {
+      "passed": true,
+      "rows": 21
+    },
+    "garment_group_lifecycle_mix.csv": {
+      "passed": true,
+      "rows": 103
+    },
+    "garment_group_momentum_mix.csv": {
+      "passed": true,
+      "rows": 84
+    },
+    "garment_group_standouts.csv": {
+      "passed": true,
+      "rows": 19
+    },
+    "garment_group_summary.csv": {
+      "passed": true,
+      "rows": 21
+    },
+    "lifecycle_distribution_summary.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "lifecycle_overview.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "lifecycle_profile_counts.csv": {
+      "passed": true,
+      "rows": 6
+    },
+    "lifecycle_sparsity_summary.csv": {
+      "passed": true,
+      "rows": 5
+    },
+    "momentum_distribution_summary.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "momentum_eligibility_scenarios.csv": {
+      "passed": true,
+      "rows": 5
+    },
+    "momentum_metrics_validation.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "momentum_panel_summary.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "momentum_tier_counts.csv": {
+      "passed": true,
+      "rows": 4
+    },
+    "monthly_demand.csv": {
+      "passed": true,
+      "rows": 25
+    },
+    "most_concentrated_lifecycles.csv": {
+      "passed": true,
+      "rows": 20
+    },
+    "nov2019_garment_contribution.csv": {
+      "passed": true,
+      "rows": 21
+    },
+    "nov2019_period_comparison.csv": {
+      "passed": true,
+      "rows": 2
+    },
+    "nov2019_surge_window.csv": {
+      "passed": true,
+      "rows": 14
+    },
+    "overall_summary.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "product_profile_examples.csv": {
+      "passed": true,
+      "rows": 30
+    },
+    "product_profile_matrix.csv": {
+      "passed": true,
+      "rows": 24
+    },
+    "product_profile_thresholds.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "product_profile_validation.csv": {
+      "passed": true,
+      "rows": 1
+    },
+    "sustained_high_volume_articles.csv": {
+      "passed": true,
+      "rows": 20
+    },
+    "top_absolute_momentum_with_context.csv": {
+      "passed": true,
+      "rows": 25
+    },
+    "top_article_lifecycles.csv": {
+      "passed": true,
+      "rows": 15
+    },
+    "top_catalog_momentum_days.csv": {
+      "passed": true,
+      "rows": 20
+    },
+    "top_catalog_volume_days.csv": {
+      "passed": true,
+      "rows": 20
+    },
+    "top_momentum_articles.csv": {
+      "passed": true,
+      "rows": 15
+    },
+    "top_relative_momentum_observations.csv": {
+      "passed": true,
+      "rows": 25
+    }
+  }
+}

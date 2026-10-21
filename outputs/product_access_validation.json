@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "eligible_products": 44014,
+  "outside_sample_checks": [
+    {
+      "article_id": "0372860002",
+      "rows": 734,
+      "date_filter_preserves_history": true
+    },
+    {
+      "article_id": "0645275001",
+      "rows": 421,
+      "date_filter_preserves_history": true
+    },
+    {
+      "article_id": "0934727001",
+      "rows": 49,
+      "date_filter_preserves_history": true
+    }
+  ]
+}

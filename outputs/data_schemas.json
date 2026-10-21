@@ -1,0 +1,230 @@
+{
+  "schema_version": 2,
+  "tables": {
+    "article_lifecycle": {
+      "path": "data/processed/article_lifecycle.parquet",
+      "grain": "article_id",
+      "population": "all purchased articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "prod_name": "VARCHAR",
+        "product_type_name": "VARCHAR",
+        "product_group_name": "VARCHAR",
+        "garment_group_name": "VARCHAR",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "left_censored": "INTEGER",
+        "right_censored": "INTEGER",
+        "active_sales_days": "BIGINT",
+        "total_units": "DOUBLE",
+        "peak_daily_units": "DOUBLE",
+        "peak_date": "DATE",
+        "avg_units_per_active_day": "DOUBLE",
+        "active_day_rate_pct": "DOUBLE"
+      }
+    },
+    "momentum_daily_panel": {
+      "path": "data/processed/momentum_daily_panel.parquet",
+      "grain": "article_id \u00d7 date",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "date": "DATE",
+        "daily_units": "DOUBLE",
+        "units_ma7": "DOUBLE",
+        "ma7_window_days": "BIGINT",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "left_censored": "INTEGER",
+        "right_censored": "INTEGER",
+        "complete_lifecycle": "INTEGER"
+      }
+    },
+    "momentum_metrics": {
+      "path": "data/processed/momentum_metrics.parquet",
+      "grain": "article_id \u00d7 date",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "date": "DATE",
+        "daily_units": "DOUBLE",
+        "units_ma7": "DOUBLE",
+        "ma7_window_days": "BIGINT",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "left_censored": "INTEGER",
+        "right_censored": "INTEGER",
+        "complete_lifecycle": "INTEGER",
+        "valid_momentum_day": "INTEGER",
+        "demand_velocity": "DOUBLE",
+        "demand_acceleration": "DOUBLE"
+      }
+    },
+    "contextual_momentum_metrics": {
+      "path": "data/processed/contextual_momentum_metrics.parquet",
+      "grain": "article_id \u00d7 date",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "date": "DATE",
+        "daily_units": "DOUBLE",
+        "units_ma7": "DOUBLE",
+        "ma7_window_days": "BIGINT",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "left_censored": "INTEGER",
+        "right_censored": "INTEGER",
+        "complete_lifecycle": "INTEGER",
+        "valid_momentum_day": "INTEGER",
+        "demand_velocity": "DOUBLE",
+        "demand_acceleration": "DOUBLE",
+        "peak_smoothed_demand": "DOUBLE",
+        "avg_units_per_active_day": "DOUBLE",
+        "velocity_pct_of_peak": "DOUBLE",
+        "acceleration_pct_of_peak": "DOUBLE",
+        "velocity_pct_of_typical_day": "DOUBLE",
+        "acceleration_pct_of_typical_day": "DOUBLE",
+        "daily_velocity_percentile": "DOUBLE",
+        "daily_relative_velocity_percentile": "DOUBLE"
+      }
+    },
+    "cumulative_lifecycle_daily": {
+      "path": "data/processed/cumulative_lifecycle_daily.parquet",
+      "grain": "article_id \u00d7 date",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "date": "DATE",
+        "daily_units": "DOUBLE",
+        "units_ma7": "DOUBLE",
+        "lifecycle_total_units": "DOUBLE",
+        "cumulative_units": "DOUBLE",
+        "cumulative_share_pct": "DOUBLE",
+        "rolling_7d_units": "DOUBLE",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "complete_lifecycle": "INTEGER"
+      }
+    },
+    "lifecycle_performance_summary": {
+      "path": "data/processed/lifecycle_performance_summary.parquet",
+      "grain": "article_id",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "prod_name": "VARCHAR",
+        "product_type_name": "VARCHAR",
+        "garment_group_name": "VARCHAR",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "complete_lifecycle": "INTEGER",
+        "total_units": "DOUBLE",
+        "cumulative_50_date": "DATE",
+        "days_to_50_pct": "BIGINT",
+        "cumulative_80_date": "DATE",
+        "days_to_80_pct": "BIGINT",
+        "pre_peak_units": "DOUBLE",
+        "peak_date_units": "DOUBLE",
+        "post_peak_units": "DOUBLE",
+        "post_peak_share_pct": "DOUBLE",
+        "max_7d_units": "DOUBLE",
+        "max_7d_demand_share_pct": "DOUBLE"
+      }
+    },
+    "product_profiles": {
+      "path": "data/processed/product_profiles.parquet",
+      "grain": "article_id",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "prod_name": "VARCHAR",
+        "product_type_name": "VARCHAR",
+        "garment_group_name": "VARCHAR",
+        "first_sale_date": "DATE",
+        "last_sale_date": "DATE",
+        "observed_lifespan_days": "BIGINT",
+        "active_sales_days": "BIGINT",
+        "active_day_rate_pct": "DOUBLE",
+        "total_units": "DOUBLE",
+        "days_to_50_pct": "BIGINT",
+        "cumulative_50_date": "DATE",
+        "cumulative_80_date": "DATE",
+        "raw_peak_date": "DATE",
+        "raw_peak_daily_units": "DOUBLE",
+        "smoothed_peak_date": "DATE",
+        "peak_smoothed_demand": "DOUBLE",
+        "left_censored": "INTEGER",
+        "right_censored": "INTEGER",
+        "days_to_80_pct": "BIGINT",
+        "max_7d_demand_share_pct": "DOUBLE",
+        "post_peak_share_pct": "DOUBLE",
+        "complete_lifecycle": "INTEGER",
+        "peak_absolute_velocity": "DOUBLE",
+        "peak_relative_velocity": "DOUBLE",
+        "lifecycle_profile": "VARCHAR",
+        "momentum_tier": "VARCHAR"
+      }
+    },
+    "article_momentum_summary": {
+      "path": "data/processed/article_momentum_summary.parquet",
+      "grain": "article_id",
+      "population": "momentum-eligible articles",
+      "columns": {
+        "article_id": "VARCHAR",
+        "observed_days": "BIGINT",
+        "valid_momentum_days": "DOUBLE",
+        "total_units": "DOUBLE",
+        "peak_smoothed_demand": "DOUBLE",
+        "peak_smoothed_demand_date": "DATE",
+        "max_positive_velocity": "DOUBLE",
+        "max_velocity_date": "DATE",
+        "max_negative_velocity": "DOUBLE",
+        "max_negative_velocity_date": "DATE",
+        "max_positive_acceleration": "DOUBLE",
+        "max_acceleration_date": "DATE",
+        "max_negative_acceleration": "DOUBLE",
+        "max_negative_acceleration_date": "DATE",
+        "complete_lifecycle": "INTEGER"
+      }
+    },
+    "daily_article_sales": {
+      "path": "data/processed/daily_article_sales.parquet",
+      "grain": "article_id \u00d7 date \u00d7 sales_channel_id",
+      "population": "all purchased articles",
+      "columns": {
+        "date": "DATE",
+        "article_id": "VARCHAR",
+        "sales_channel_id": "BIGINT",
+        "units_sold": "BIGINT",
+        "avg_price_index": "DOUBLE",
+        "min_price_index": "DOUBLE",
+        "max_price_index": "DOUBLE",
+        "sales_value_index": "DOUBLE"
+      }
+    },
+    "article_dimension": {
+      "path": "data/processed/article_dimension.parquet",
+      "grain": "article_id",
+      "population": "full catalog",
+      "columns": {
+        "article_id": "VARCHAR",
+        "product_code": "VARCHAR",
+        "prod_name": "VARCHAR",
+        "product_type_name": "VARCHAR",
+        "product_group_name": "VARCHAR",
+        "colour_group_name": "VARCHAR",
+        "department_name": "VARCHAR",
+        "index_name": "VARCHAR",
+        "index_group_name": "VARCHAR",
+        "section_name": "VARCHAR",
+        "garment_group_name": "VARCHAR"
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "checks": {
+    "purchased_articles": {
+      "actual": 104547,
+      "expected": 104547
+    },
+    "all_lifecycle_units": {
+      "actual": 31788324,
+      "expected": 31788324
+    },
+    "eligible_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "panel_rows": {
+      "actual": 15380104,
+      "expected": 15380104
+    },
+    "panel_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "panel_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "panel_duplicate_keys": {
+      "actual": 0,
+      "expected": 0
+    },
+    "panel_invalid_keys_units": {
+      "actual": 0,
+      "expected": 0
+    },
+    "momentum_rows": {
+      "actual": 15380104,
+      "expected": 15380104
+    },
+    "momentum_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "momentum_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "momentum_duplicate_keys": {
+      "actual": 0,
+      "expected": 0
+    },
+    "momentum_invalid_keys_units": {
+      "actual": 0,
+      "expected": 0
+    },
+    "contextual_rows": {
+      "actual": 15380104,
+      "expected": 15380104
+    },
+    "contextual_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "contextual_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "contextual_duplicate_keys": {
+      "actual": 0,
+      "expected": 0
+    },
+    "contextual_invalid_keys_units": {
+      "actual": 0,
+      "expected": 0
+    },
+    "cumulative_rows": {
+      "actual": 15380104,
+      "expected": 15380104
+    },
+    "cumulative_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "cumulative_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "cumulative_duplicate_keys": {
+      "actual": 0,
+      "expected": 0
+    },
+    "cumulative_invalid_keys_units": {
+      "actual": 0,
+      "expected": 0
+    },
+    "date_gaps": {
+      "actual": 0,
+      "expected": 0
+    },
+    "valid_momentum_rows": {
+      "actual": 15027992,
+      "expected": 15027992
+    },
+    "complete_articles": {
+      "actual": 31833,
+      "expected": 31833
+    },
+    "performance_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "performance_unique_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "performance_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "profiles_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "profiles_unique_articles": {
+      "actual": 44014,
+      "expected": 44014
+    },
+    "profiles_units": {
+      "actual": 29996706,
+      "expected": 29996706
+    },
+    "invalid_momentum_windows": {
+      "actual": 0,
+      "expected": 0
+    },
+    "momentum_formula_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "relative_scale_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "cumulative_formula_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "invalid_lifecycle_metrics": {
+      "actual": 0,
+      "expected": 0
+    },
+    "missing_classifications": {
+      "actual": 0,
+      "expected": 0
+    },
+    "lifecycle_label_count": {
+      "actual": 6,
+      "expected": 6
+    },
+    "momentum_label_count": {
+      "actual": 4,
+      "expected": 4
+    },
+    "partial_classification_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "history_article_coverage_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "smoothing_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "momentum_edge_mask_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "peak_date_tie_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "milestone_date_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "peak_split_formula_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "profile_peak_metadata_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "profile_threshold_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "category_population_errors": {
+      "actual": 0,
+      "expected": 0
+    },
+    "catalog_population_errors": {
+      "actual": 0,
+      "expected": 0
+    }
+  }
+}

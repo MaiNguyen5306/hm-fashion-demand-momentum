@@ -1,6 +1,8 @@
 from pathlib import Path
 import duckdb
 
+from demand_math import lifecycle_profile_sql
+
 
 # --------------------------------------------------
 # Paths
@@ -291,6 +293,14 @@ con.execute(
             p.total_units,
 
             p.days_to_50_pct,
+            p.cumulative_50_date,
+            p.cumulative_80_date,
+            l.peak_date AS raw_peak_date,
+            l.peak_daily_units AS raw_peak_daily_units,
+            a.peak_smoothed_demand_date AS smoothed_peak_date,
+            a.peak_smoothed_demand,
+            l.left_censored,
+            l.right_censored,
             p.days_to_80_pct,
 
             p.max_7d_demand_share_pct,
@@ -306,36 +316,7 @@ con.execute(
             -- Lifecycle shape
             -- -----------------------------------
 
-            CASE
-
-                WHEN p.complete_lifecycle = 0
-                    THEN 'Partial Lifecycle'
-
-
-                WHEN p.max_7d_demand_share_pct >= {p75_7d}
-                 AND p.days_to_80_pct <= {p25_days80}
-                    THEN 'Rapid Spike'
-
-
-                WHEN p.max_7d_demand_share_pct <= {p25_7d}
-                 AND p.days_to_80_pct >= {p75_days80}
-                 AND p.total_units >= {p75_units}
-                    THEN 'Sustained Performer'
-
-
-                WHEN p.max_7d_demand_share_pct <= {p25_7d}
-                 AND p.days_to_80_pct >= {p75_days80}
-                    THEN 'Slow Burn'
-
-
-                WHEN p.post_peak_share_pct >= {p75_post_peak}
-                 AND p.max_7d_demand_share_pct < {p75_7d}
-                    THEN 'Long Tail'
-
-
-                ELSE 'Balanced Lifecycle'
-
-            END AS lifecycle_profile,
+            {lifecycle_profile_sql(p25_7d, p75_7d, p25_days80, p75_days80, p75_units, p75_post_peak)} AS lifecycle_profile,
 
 
             -- -----------------------------------
@@ -374,6 +355,10 @@ con.execute(
         ) AS l
             ON p.article_id = l.article_id
 
+
+        INNER JOIN read_parquet(
+            '{(PROJECT_ROOT / 'data/processed/article_momentum_summary.parquet').as_posix()}'
+        ) AS a ON p.article_id = a.article_id
 
         INNER JOIN article_relative_momentum AS m
             ON p.article_id = m.article_id
@@ -530,7 +515,7 @@ examples = con.execute(
 
             ROW_NUMBER() OVER (
                 PARTITION BY lifecycle_profile
-                ORDER BY total_units DESC
+                ORDER BY total_units DESC, article_id ASC
             ) AS profile_rank
 
         FROM read_parquet('{product_profiles}')

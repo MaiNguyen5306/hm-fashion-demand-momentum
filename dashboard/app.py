@@ -61,6 +61,11 @@ st.caption(
     "demand using 31.8M H&M transactions from 2018–2020."
 )
 
+st.caption(
+    "The analysis below covers 44,014 momentum-eligible articles. "
+    "The source dataset contains 31.8M transactions across all purchased articles."
+)
+
 
 # --------------------------------------------------
 # KPI calculations
@@ -194,7 +199,7 @@ profile_fig.update_layout(
 
 st.plotly_chart(
     profile_fig,
-    use_container_width=True,
+    width="stretch",
     config={"displayModeBar": False},
 )
 
@@ -211,7 +216,8 @@ st.subheader(
 
 st.caption(
     "Sustained Performer share uses only products with "
-    "fully observed lifecycles."
+    "observed lifecycles that do not touch either dataset boundary. "
+    "This does not establish true launch-to-discontinuation coverage."
 )
 
 
@@ -257,7 +263,7 @@ category_fig.update_layout(
 
 st.plotly_chart(
     category_fig,
-    use_container_width=True,
+    width="stretch",
     config={"displayModeBar": False},
 )
 
@@ -314,7 +320,7 @@ momentum_fig.update_layout(
 
 st.plotly_chart(
     momentum_fig,
-    use_container_width=True,
+    width="stretch",
     config={"displayModeBar": False},
 )
 
@@ -326,7 +332,7 @@ st.plotly_chart(
 st.divider()
 
 st.subheader(
-    "A demand surge can begin before sales reach their peak"
+    "Late-November demand rose across eligible products"
 )
 
 
@@ -355,7 +361,7 @@ surge_fig.update_layout(
 
 st.plotly_chart(
     surge_fig,
-    use_container_width=True,
+    width="stretch",
     config={"displayModeBar": False},
 )
 
@@ -382,11 +388,12 @@ daily_unit_change = (
 
 
 st.info(
-    f"Average daily demand increased by approximately "
+    f"Average daily demand among eligible products increased by approximately "
     f"{daily_unit_change:.1f}% during the late-November / "
     f"early-December window compared with the prior 28 days. "
-    f"Product-level momentum began strengthening before the "
-    f"catalog reached its highest sales volume."
+    f"In the retrospective analysis, positive-momentum share peaked before "
+    f"eligible-product sales volume. Centered smoothing uses future observations, "
+    f"so this is not evidence of a live early-warning signal."
 )
 
 

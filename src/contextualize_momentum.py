@@ -235,6 +235,9 @@ catalog_daily = con.execute(
             COUNT(DISTINCT article_id)
                 AS observed_articles,
 
+            COUNT(DISTINCT CASE WHEN daily_units > 0 THEN article_id END)
+                AS selling_articles,
+
 
             SUM(
                 CASE
@@ -366,7 +369,7 @@ top_relative = con.execute(
 
 
     ORDER BY
-        c.velocity_pct_of_typical_day DESC
+        c.velocity_pct_of_typical_day DESC, c.article_id ASC, c.date ASC
 
 
     LIMIT 25
@@ -432,7 +435,7 @@ top_absolute = con.execute(
 
 
     ORDER BY
-        c.demand_velocity DESC
+        c.demand_velocity DESC, c.article_id ASC, c.date ASC
 
 
     LIMIT 25

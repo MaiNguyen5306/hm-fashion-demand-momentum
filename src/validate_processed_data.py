@@ -118,6 +118,20 @@ dimension_coverage = con.execute(
 print("\nDIMENSION COVERAGE")
 print(dimension_coverage.to_string(index=False))
 
+if int(fact_quality.loc[0, "panel_rows"]) != 8_788_910 or int(fact_quality.loc[0, "total_units"]) != 31_788_324:
+    raise ValueError("Daily fact count or unit reconciliation failed.")
+for field in ["missing_keys", "invalid_units"]:
+    if int(fact_quality.loc[0, field]) != 0:
+        raise ValueError(f"Fact table failed check: {field}")
+if int(duplicate_grain.loc[0, "duplicate_groups"]) != 0:
+    raise ValueError("Duplicate fact keys detected.")
+if int(dimension_coverage.loc[0, "unmatched_articles"]) != 0 or int(dimension_coverage.loc[0, "purchased_articles"]) != 104_547:
+    raise ValueError("Purchased-article count or dimension coverage failed.")
+dimension_rows, unique_articles = con.execute(
+    f"SELECT COUNT(*), COUNT(DISTINCT article_id) FROM read_parquet('{article_dim}')"
+).fetchone()
+if dimension_rows != 105_542 or unique_articles != dimension_rows:
+    raise ValueError("Article dimension keys are not unique or catalog count differs.")
 
 con.close()
 

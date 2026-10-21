@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "peak_policy": "Earliest tied peak date",
+  "post_peak_share_changes": [
+    {
+      "article_id": "0743234003",
+      "previous_post_peak_share_pct": 45.51,
+      "current_post_peak_share_pct": 66.67
+    }
+  ],
+  "changed_product_labels": 0,
+  "category_population": "Lifecycle medians restricted to complete observed lifecycles",
+  "catalog_population": "Eligible articles; observed and selling counts are explicit"
+}

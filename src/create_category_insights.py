@@ -215,15 +215,15 @@ garment_summary = con.execute(
 
 
         ROUND(
-            MEDIAN(max_7d_demand_share_pct),
+            MEDIAN(CASE WHEN complete_lifecycle = 1 THEN max_7d_demand_share_pct END),
             2
-        ) AS median_max_7d_share_pct,
+        ) AS median_max_7d_share_complete_pct,
 
 
         ROUND(
-            MEDIAN(days_to_80_pct),
+            MEDIAN(CASE WHEN complete_lifecycle = 1 THEN days_to_80_pct END),
             1
-        ) AS median_days_to_80
+        ) AS median_days_to_80_complete
 
 
     FROM read_parquet('{product_profiles}')
@@ -478,8 +478,8 @@ print("\nTOP 5: SUSTAINED PERFORMER SHARE")
 top_sustained = (
     standouts
     .sort_values(
-        "sustained_share_pct",
-        ascending=False
+        ["sustained_share_pct", "garment_group_name"],
+        ascending=[False, True]
     )
     .head(5)
 )
@@ -492,8 +492,8 @@ print("\nTOP 5: RAPID SPIKE SHARE")
 top_spike = (
     standouts
     .sort_values(
-        "rapid_spike_share_pct",
-        ascending=False
+        ["rapid_spike_share_pct", "garment_group_name"],
+        ascending=[False, True]
     )
     .head(5)
 )
@@ -506,8 +506,8 @@ print("\nTOP 5: LONG-TAIL SHARE")
 top_long_tail = (
     standouts
     .sort_values(
-        "long_tail_share_pct",
-        ascending=False
+        ["long_tail_share_pct", "garment_group_name"],
+        ascending=[False, True]
     )
     .head(5)
 )
@@ -520,8 +520,8 @@ print("\nTOP 5: EXTREME MOMENTUM SHARE")
 top_extreme = (
     standouts
     .sort_values(
-        "extreme_momentum_share_pct",
-        ascending=False
+        ["extreme_momentum_share_pct", "garment_group_name"],
+        ascending=[False, True]
     )
     .head(5)
 )

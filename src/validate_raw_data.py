@@ -107,6 +107,19 @@ channel_summary = con.execute(
 
 print(channel_summary.to_string(index=False))
 
+if int(transaction_summary.loc[0, "transaction_rows"]) != 31_788_324:
+    raise ValueError("Raw transaction count differs from the documented dataset.")
+if str(transaction_summary.loc[0, "start_date"])[:10] != "2018-09-20" or str(transaction_summary.loc[0, "end_date"])[:10] != "2020-09-22":
+    raise ValueError("Unexpected raw date range.")
+if int(transaction_summary.loc[0, "missing_price"]) != 0:
+    raise ValueError("Raw transactions contain missing prices.")
+if int(article_summary.loc[0, "article_rows"]) != 105_542 or int(article_summary.loc[0, "unique_articles"]) != 105_542:
+    raise ValueError("Article dimension count or uniqueness differs from the documented dataset.")
+for field in ["missing_article_id", "missing_product_type", "missing_garment_group"]:
+    if int(article_summary.loc[0, field]) != 0:
+        raise ValueError(f"Article metadata failed check: {field}")
+if set(channel_summary.sales_channel_id) != {1, 2}:
+    raise ValueError("Unexpected sales channel IDs.")
 
 con.close()
 

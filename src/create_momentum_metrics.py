@@ -1,6 +1,8 @@
 from pathlib import Path
 import duckdb
 
+from demand_math import momentum_query, peak_date_sql
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -49,89 +51,13 @@ print("=" * 55)
 # --------------------------------------------------
 
 print("\nCalculating finite-difference momentum metrics...")
+con.read_parquet(momentum_panel).create_view("momentum_input")
 
 
 con.execute(
     f"""
     COPY (
-        WITH neighbors AS (
-
-            SELECT
-                *,
-
-                LAG(units_ma7) OVER (
-                    PARTITION BY article_id
-                    ORDER BY date
-                ) AS prev_ma7,
-
-                LEAD(units_ma7) OVER (
-                    PARTITION BY article_id
-                    ORDER BY date
-                ) AS next_ma7,
-
-                LAG(ma7_window_days) OVER (
-                    PARTITION BY article_id
-                    ORDER BY date
-                ) AS prev_window_days,
-
-                LEAD(ma7_window_days) OVER (
-                    PARTITION BY article_id
-                    ORDER BY date
-                ) AS next_window_days
-
-            FROM read_parquet('{momentum_panel}')
-        ),
-
-        calculated AS (
-
-            SELECT
-                article_id,
-                date,
-                daily_units,
-                units_ma7,
-                ma7_window_days,
-
-                first_sale_date,
-                last_sale_date,
-                observed_lifespan_days,
-                left_censored,
-                right_censored,
-                complete_lifecycle,
-
-                CASE
-                    WHEN ma7_window_days = 7
-                     AND prev_window_days = 7
-                     AND next_window_days = 7
-                    THEN 1
-                    ELSE 0
-                END AS valid_momentum_day,
-
-                CASE
-                    WHEN ma7_window_days = 7
-                     AND prev_window_days = 7
-                     AND next_window_days = 7
-
-                    THEN (next_ma7 - prev_ma7) / 2.0
-                    ELSE NULL
-                END AS demand_velocity,
-
-                CASE
-                    WHEN ma7_window_days = 7
-                     AND prev_window_days = 7
-                     AND next_window_days = 7
-
-                    THEN next_ma7
-                       - (2.0 * units_ma7)
-                       + prev_ma7
-
-                    ELSE NULL
-                END AS demand_acceleration
-
-            FROM neighbors
-        )
-
-        SELECT *
-        FROM calculated
+        {momentum_query('momentum_input')}
     )
 
     TO '{momentum_metrics}'
@@ -167,31 +93,31 @@ con.execute(
             MAX(units_ma7)
                 AS peak_smoothed_demand,
 
-            ARG_MAX(date, units_ma7)
+            {peak_date_sql('units_ma7', minimum=False)}
                 AS peak_smoothed_demand_date,
 
             MAX(demand_velocity)
                 AS max_positive_velocity,
 
-            ARG_MAX(date, demand_velocity)
+            {peak_date_sql('demand_velocity', minimum=False)}
                 AS max_velocity_date,
 
             MIN(demand_velocity)
                 AS max_negative_velocity,
 
-            ARG_MIN(date, demand_velocity)
+            {peak_date_sql('demand_velocity', minimum=True)}
                 AS max_negative_velocity_date,
 
             MAX(demand_acceleration)
                 AS max_positive_acceleration,
 
-            ARG_MAX(date, demand_acceleration)
+            {peak_date_sql('demand_acceleration', minimum=False)}
                 AS max_acceleration_date,
 
             MIN(demand_acceleration)
                 AS max_negative_acceleration,
 
-            ARG_MIN(date, demand_acceleration)
+            {peak_date_sql('demand_acceleration', minimum=True)}
                 AS max_negative_acceleration_date,
 
             MAX(complete_lifecycle)
@@ -363,7 +289,7 @@ top_momentum = con.execute(
 
     FROM read_parquet('{article_summary}')
 
-    ORDER BY max_positive_velocity DESC
+    ORDER BY max_positive_velocity DESC, article_id ASC
 
     LIMIT 15
     """

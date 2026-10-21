@@ -46,7 +46,10 @@ catalog_daily = con.execute(
         SUM(daily_units) AS catalog_units,
 
         COUNT(DISTINCT article_id)
-            AS active_articles,
+            AS observed_articles,
+
+        COUNT(DISTINCT CASE WHEN daily_units > 0 THEN article_id END)
+            AS selling_articles,
 
         AVG(
             CASE
@@ -154,7 +157,10 @@ event_window = con.execute(
         SUM(daily_units) AS catalog_units,
 
         COUNT(DISTINCT article_id)
-            AS active_articles,
+            AS observed_articles,
+
+        COUNT(DISTINCT CASE WHEN daily_units > 0 THEN article_id END)
+            AS selling_articles,
 
         AVG(
             CASE
