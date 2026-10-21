@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "articles": 44014,
+  "history_rows": 15380104,
+  "units": 29996706,
+  "python_reference_products": 5,
+  "python_reference_rows": 2642,
+  "tolerance": 1e-09
+}

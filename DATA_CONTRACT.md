@@ -107,7 +107,9 @@ All 44,014 eligible products are accessible from local processed files. Queries 
 
 Date filters apply after full-history accumulation. They do not reset cumulative units, change scale denominators, recalculate centered momentum, or rerank percentiles within the selected date range. Filters are display selections, not alternative analytical populations.
 
-The compact `dashboard/data/` export remains a separate, disclosed example artifact: all profiles, but daily curves for only the top five articles per lifecycle label. Its `has_daily_curve` flag describes that export, not local availability. No public hosting strategy has been selected.
+The compact `dashboard/data/` export remains a separate, disclosed example artifact: all profiles, but daily curves for only the top five articles per lifecycle label. Its `has_daily_curve` flag describes that export, not local availability or the new complete web export.
+
+The React sample uses a separate complete static export under `web/public/data/`. It covers all eligible articles with 128 compressed binary history shards, product offsets, and original same-day valid-population counts. The browser reconstructs the same full-history MA7, finite differences, and cumulative demand before applying display date filters. Raw counts and percentile rank indices are encoded as little-endian uint16 values, with `65535` reserved for invalid edge ranks. Export checks reject out-of-range encodings; JavaScript/Python parity is checked separately. See [VERCEL_READINESS.md](VERCEL_READINESS.md) for the web contract and offline Vercel packaging strategy. Public deployment remains deferred.
 
 ## Validation and interpretation limits
 

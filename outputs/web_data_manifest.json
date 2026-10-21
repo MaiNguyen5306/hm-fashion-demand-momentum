@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "eligible_articles": 44014,
+  "eligible_units": 29996706,
+  "history_rows": 15380104,
+  "history_articles": 44014,
+  "shards": 128,
+  "history_encoding": {
+    "endian": "little",
+    "bytes_per_row": 6,
+    "columns": [
+      "daily_units",
+      "velocity_rank_index",
+      "relative_velocity_rank_index"
+    ],
+    "null_rank": 65535
+  },
+  "reconstruction": "MA7 and finite differences reconstructed from complete raw daily counts; ranks decoded with same-date valid-population denominators; all dates retained",
+  "peak_policy": "Earliest tied date; distinct raw/smoothed peaks",
+  "catalog_scope": "Momentum-eligible articles only",
+  "compressed_asset_bytes": 53798644,
+  "assets": {
+    "catalog.json.pack": {
+      "bytes": 29652,
+      "sha256": "3f60adaee74c5c861ae7a72d42f1e84157a64ba718d80b7933cff673524ff69a"
+    },
+    "categories.json.pack": {
+      "bytes": 1876,
+      "sha256": "f4690d0791b19c1e1c03631dab7f51c7cda63a3377c21f34c501643d228024d7"
+    },
+    "history-000.bin.pack": {
+      "bytes": 424765,
+      "sha256": "d6556b6fb6a9ddeeaf86a6a9409411a855e0d80055c7554759517ae2bd246b9e"
+    },
+    "history-001.bin.pack": {
+      "bytes": 441322,
+      "sha256": "26f04cc17e81c6b749e56ffb8936b43e235ab336e0e85aaf04c1b5b678fc5900"
+    },
+    "history-002.bin.pack": {
+      "bytes": 305835,
+      "sha256": "fb4b712b4300c32df71eaddc5d0bf7d78ea0a1c82f71fac47245a2dc8cc813aa"
+    },
+    "history-003.bin.pack": {
+      "bytes": 391309,
+      "sha256": "0a9819d54c3d7e40b14da512d76321573b972f7756e78b7356bdc8e75ef9db05"
+    },
+    "history-004.bin.pack": {
+      "bytes": 383385,
+      "sha256": "8e72ef80ca08c5d51a6f882b51fa29c0f8d218ef43912f1e2d6e544e1561c4bc"
+    },
+    "history-005.bin.pack": {
+      "bytes": 436171,
+      "sha256": "8ddab721a05eba580f409f24a782afcdf0cdabd039dde0147df828823599f321"
+    },
+    "history-006.bin.pack": {
+      "bytes": 432390,
+      "sha256": "257431d5a0612b6b4a1139db84fa545bba5c697b2a4799bd20c63488170c7c6c"
+    },
+    "history-007.bin.pack": {
+      "bytes": 376657,
+      "sha256": "6bda396013de22fc2fa896cc277e63d3ebc46a6e0da4da6a4d9e5a90184c8389"
+    },
+    "history-008.bin.pack": {
+      "bytes": 369075,
+      "sha256": "af4af3da3232be0df45c5f8d9b6f7885beda5a85ebce39e700c5e1645f9adb72"
+    },
+    "history-009.bin.pack": {
+      "bytes": 396102,
+      "sha256": "d8c7830203342c8fa8b00195337969b8db6c796310fc24a703907377f74ce42e"
+    },
+    "history-010.bin.pack": {
+      "bytes": 417821,
+      "sha256": "55b88705a0470591fbc13099c9acfcbbbf62653df72acf5b03ea439d1bccce2f"
+    },
+    "history-011.bin.pack": {
+      "bytes": 451653,
+      "sha256": "f69ea990d0070c570ada55da7276138dc84cb46252d7bf5d12b9dd4ac1c9db23"
+    },
+    "history-012.bin.pack": {
+      "bytes": 324867,
+      "sha256": "6ed77d51b2cd74144e5fe96fcff0e18be41efb86d880582e9c2f6457fbb23519"
+    },
+    "history-013.bin.pack": {
+      "bytes": 400404,
+      "sha256": "dd2a225fa6580cd83145604e3b45a99adf8b20cd3c5598e02dbb87ca24e89541"
+    },
+    "history-014.bin.pack": {
+      "bytes": 378210,
+      "sha256": "75dd9ea2021436eac1bab4fcf626d62e944b0ff9650029942bb4656e6d693f90"
+    },
+    "history-015.bin.pack": {
+      "bytes": 298905,
+      "sha256": "1b9cccb27b72dcd58a486ea1b223eaa9f29f3d6e00e22bbd4ea8563af0ca8a12"
+    },
+    "history-016.bin.pack": {
+      "bytes": 389857,
+      "sha256": "605f05927f7a3527aed1b1d4976c5838c1b922dc35a7ca75776b680d02174b37"
+    },
+    "history-017.bin.pack": {
+      "bytes": 425325,
+      "sha256": "9f3fbac3866c895d6e7554f98b23c45dfa6d26d8cd1b6ea8ec98e6754a250b0e"
+    },
+    "history-018.bin.pack": {
+      "bytes": 404844,
+      "sha256": "ae7f7c11537fbb22986cc228687a926df6119981cf5331716c6951a2fefa2999"
+    },
+    "history-019.bin.pack": {
+      "bytes": 457798,
+      "sha256": "d845f2abcf29bb6b50fe0e4472b8ed7cb7840a6aa0ad2f6f274c429cc8609b6c"
+    },
+    "history-020.bin.pack": {
+      "bytes": 433108,
+      "sha256": "a8de3c9952f27bfdcc78c94b9a66d6983dee6d978cb9e275492735cba924f65d"
+    },
+    "history-021.bin.pack": {
+      "bytes": 411139,
+      "sha256": "2c18ded77e3825abc6d22ea39d7ff8795d6c834b48e55e12a3f0f7e2f8da2777"
+    },
+    "history-022.bin.pack": {
+      "bytes": 346440,
+      "sha256": "0a9079284b88dc190b4cb1b04349694c02eca886322cecede6aa811ed0ff1b18"
+    },
+    "history-023.bin.pack": {
+      "bytes": 360154,
+      "sha256": "089bba47e6b1086d71157b881a917336a26b6fcdf7e762d6296a2d97ab6fe007"
+    },
+    "history-024.bin.pack": {
+      "bytes": 415646,
+      "sha256": "db5e8561f569bcb847a040d4a7e83c52221d75635c41d66494d06ee3e900a93c"
+    },
+    "history-025.bin.pack": {
+      "bytes": 417945,
+      "sha256": "c92355043b14460391a518c2d57b155ee5b376d21bbefd727677909f1044fe79"
+    },
+    "history-026.bin.pack": {
+      "bytes": 355072,
+      "sha256": "7e2e13a75848c198aa3231811f3d7500c421d1407d452dd44c414456559b2956"
+    },
+    "history-027.bin.pack": {
+      "bytes": 370291,
+      "sha256": "8863a0eb8a3624cdf7091ab23bb07ef984ce4e359a7cc60cb4b11906fd2e1d6d"
+    },
+    "history-028.bin.pack": {
+      "bytes": 371643,
+      "sha256": "52ea9effd0cdbf0e275d159878efd54d5e7de3c5ef42ac42ab25e0f4d31e8881"
+    },
+    "history-029.bin.pack": {
+      "bytes": 517933,
+      "sha256": "412cd41c7f7c5f6daacaf0e7027af24922119dc8cc4ee8c7e6a3f2e8a776375b"
+    },
+    "history-030.bin.pack": {
+      "bytes": 368718,
+      "sha256": "661abad5b913c0f438a6c36c01a4b7777c605b6c0c6d8d74ca608ed022932051"
+    },
+    "history-031.bin.pack": {
+      "bytes": 498035,
+      "sha256": "de19c5ed443d1ef511d36864d4b32264f26c306f7171e8fc8be31d3987ff8ccf"
+    },
+    "history-032.bin.pack": {
+      "bytes": 520903,
+      "sha256": "a0d07deb8c1993b9a8091914821100efc20a9fbd416f194753c5b48d49694176"
+    },
+    "history-033.bin.pack": {
+      "bytes": 333500,
+      "sha256": "b550e5725dda2c8a13eab028bb6673a8f8f05da73cc2aba4d73bb96a4abf3efa"
+    },
+    "history-034.bin.pack": {
+      "bytes": 353118,
+      "sha256": "c0fff301eb0eb33c065315426c304e1ed7d97f76746c5cf9f4c34c2d63cbbdaf"
+    },
+    "history-035.bin.pack": {
+      "bytes": 474204,
+      "sha256": "abca0885fc80722ac8ec2807c2306b4c61d113a77d4df9ad9423aeda03ada90e"
+    },
+    "history-036.bin.pack": {
+      "bytes": 398068,
+      "sha256": "5c37dd3801ee5bac3216149ed556f529fef708407654e22421b4171ae2f08456"
+    },
+    "history-037.bin.pack": {
+      "bytes": 432461,
+      "sha256": "dc97d01140067e6a6e62b2fff10f31e49e11e47f4c7f37d55e855bf66833a4ee"
+    },
+    "history-038.bin.pack": {
+      "bytes": 374772,
+      "sha256": "de63a1387417aeb5566d59f5fb2a586307fd4ff977cbbce5f4d2049356b878f7"
+    },
+    "history-039.bin.pack": {
+      "bytes": 475626,
+      "sha256": "42f7a76a42383f63797a00f24f674d19a7ff6eac8a387523158ccb85040cd981"
+    },
+    "history-040.bin.pack": {
+      "bytes": 308808,
+      "sha256": "32b9db113a3d9a2644177e81893fce411c21df0054beda6c5f8cbb7590887688"
+    },
+    "history-041.bin.pack": {
+      "bytes": 342875,
+      "sha256": "b97e31a905ae094fb348e39aad02903dd82effbcbd30e42c7cace06ada4783c3"
+    },
+    "history-042.bin.pack": {
+      "bytes": 572901,
+      "sha256": "e27ccd3586d64aaa9286a2d873222a31e4633bde97134d09cb1ab7283e4ea809"
+    },
+    "history-043.bin.pack": {
+      "bytes": 343358,
+      "sha256": "cd1378063761b7c1c1f3ca9d65de1239903dae2cc666a9300805e2d48173e472"
+    },
+    "history-044.bin.pack": {
+      "bytes": 321815,
+      "sha256": "e0762f8c8eb917d474866d85949d05577540f669d83810e1be2938d4374cafb3"
+    },
+    "history-045.bin.pack": {
+      "bytes": 326980,
+      "sha256": "8e3c46f96f5fc7abcd07afc142e1e47c1bc6755a3ac3d6187f1e9a1bf2762d66"
+    },
+    "history-046.bin.pack": {
+      "bytes": 441582,
+      "sha256": "0445a9d7c857d02efe07dfa5cad4ed53966ab96c3cf3e8ce1dba5b26cd1733b3"
+    },
+    "history-047.bin.pack": {
+      "bytes": 358460,
+      "sha256": "e72ad9c3541479bf46bd76153ebaf7fed8c04e13cfa0b9ba8ec148004d52cb48"
+    },
+    "history-048.bin.pack": {
+      "bytes": 420202,
+      "sha256": "ff0fa8ba894f93f8070606f93445851bc1e91a5cab3c15c41ceeb32a2d829563"
+    },
+    "history-049.bin.pack": {
+      "bytes": 355002,
+      "sha256": "06290e72edd60825ea6d12ecd1b1304ffac74d7616fcee4372667a3d49d688c2"
+    },
+    "history-050.bin.pack": {
+      "bytes": 407631,
+      "sha256": "b75207cbd675d8788d3cda76bb74948b0e3c6f9daa0beb1c9085d5b5e175f0e5"
+    },
+    "history-051.bin.pack": {
+      "bytes": 327169,
+      "sha256": "2cae4743697cda37d135d823fdd733d983ca27163fbfdadb6a1b6dddf62152df"
+    },
+    "history-052.bin.pack": {
+      "bytes": 291206,
+      "sha256": "ba429d45a4d07cc1506b9c23537ad43ada0cb1cd23a71d4e8dd7db7b37bf002f"
+    },
+    "history-053.bin.pack": {
+      "bytes": 376268,
+      "sha256": "e5f8685227e75500bf6c7280c1534397ca5204308be4e956a14af5a7d79a9a78"
+    },
+    "history-054.bin.pack": {
+      "bytes": 325370,
+      "sha256": "a2aed6532b2c3f18a42f9790e3f6fb23501ed51c4271265ab1206646c52c4360"
+    },
+    "history-055.bin.pack": {
+      "bytes": 327748,
+      "sha256": "fff452d7ba668781c1ff1ecce661f945c8066d1874cb1b4691fa4342c025982c"
+    },
+    "history-056.bin.pack": {
+      "bytes": 285878,
+      "sha256": "715502613a6bda73be9cfa3628e5f61d025c2d5d14656406ff6ec14337c0b3e1"
+    },
+    "history-057.bin.pack": {
+      "bytes": 294119,
+      "sha256": "e864d66ebf2c9821639fd714310ba18c2e9c24e0aae43440dff9d08c0fecff9d"
+    },
+    "history-058.bin.pack": {
+      "bytes": 420827,
+      "sha256": "8724ca61ecbec987c535cbc58239325e18722ff7b49ae0d3d838bdda1fda6f7c"
+    },
+    "history-059.bin.pack": {
+      "bytes": 333254,
+      "sha256": "0d179e9ec2420fe3e75fd2395eb8b15c64483b9c78f7944e46b8bee64af03965"
+    },
+    "history-060.bin.pack": {
+      "bytes": 475071,
+      "sha256": "ea9c5e9e9cf069aa8bb62202ee7d0071afc762917fe6dffb7d4503b2a935de79"
+    },
+    "history-061.bin.pack": {
+      "bytes": 320918,
+      "sha256": "2346a56966d053f302992bd7a1edc2fcf979c969a3288f7ee13394b495f05def"
+    },
+    "history-062.bin.pack": {
+      "bytes": 422359,
+      "sha256": "0fe3c3cddda8083291f63418dab7f2111db3af25a6c6761db71c1103d43bd6ca"
+    },
+    "history-063.bin.pack": {
+      "bytes": 395217,
+      "sha256": "aaf17ed9c63f1328ff15fae90080b69beabb6c6051822923359b20565d478d03"
+    },
+    "history-064.bin.pack": {
+      "bytes": 421599,
+      "sha256": "21d63af639bdb6cc0c3ae5a95b9c2f9e88e9774e9237e77d59e1d77180464a25"
+    },
+    "history-065.bin.pack": {
+      "bytes": 308806,
+      "sha256": "5ce8951847eb38c10113c3b96b61828539a522c0d5675d65ca835ad1fc798db8"
+    },
+    "history-066.bin.pack": {
+      "bytes": 293908,
+      "sha256": "8ebd298a5aec0b0008af0bcf049ce3d91dc7a9d1b87a83024db3a7d9b1734c4d"
+    },
+    "history-067.bin.pack": {
+      "bytes": 317357,
+      "sha256": "9decc4a76aec6e601eee590404dc845db00d7bc7603b8e05697f01084a3d3faf"
+    },
+    "history-068.bin.pack": {
+      "bytes": 354966,
+      "sha256": "28ca4f50547e1270998966dcd0f731e7dde7154ee35fc186556b2cce9380cce8"
+    },
+    "history-069.bin.pack": {
+      "bytes": 417289,
+      "sha256": "669c56eb813083a00f43600cd3308804836aa032f62bd129f0b6583533373316"
+    },
+    "history-070.bin.pack": {
+      "bytes": 443344,
+      "sha256": "571890ec22c871448d87b395b89ccffc5c5f258c41027fcd68e17e263598ea5c"
+    },
+    "history-071.bin.pack": {
+      "bytes": 372906,
+      "sha256": "76d65b074a2da610f6bae0f6c2c732473e3e7ce47fbd763bb5b90f8f6b65576e"
+    },
+    "history-072.bin.pack": {
+      "bytes": 391262,
+      "sha256": "e0042ac3aceef8cc24c48c4307e02b94af14b433b14da99eeba4768430453507"
+    },
+    "history-073.bin.pack": {
+      "bytes": 404829,
+      "sha256": "cc2a34e54d3e0b9a794a49a46f0692e548ffb5a74df2447a5b80b568d0bc4779"
+    },
+    "history-074.bin.pack": {
+      "bytes": 339309,
+      "sha256": "8717fa88c3508001361abc20e564b45aa6368894afbd108e5e3b66270fed3fa8"
+    },
+    "history-075.bin.pack": {
+      "bytes": 338083,
+      "sha256": "4080e13c9a366285c633cfd99fc6d53975eae36d994fd4d17cb71684ae5c7ee9"
+    },
+    "history-076.bin.pack": {
+      "bytes": 401653,
+      "sha256": "25446cfe76bc1bf66f9b6b7b149b4c1fa06b63f4598dd3c7c7a2b796d66d0d6b"
+    },
+    "history-077.bin.pack": {
+      "bytes": 348037,
+      "sha256": "c419dbf1350de53c61e1649d1538c647436f952ac066d8fe7b2ef0f610d0a281"
+    },
+    "history-078.bin.pack": {
+      "bytes": 349194,
+      "sha256": "32298965e7a6554e918ef7f8d9fb28e07f0cbf80856ab6d8c825cd74cb539443"
+    },
+    "history-079.bin.pack": {
+      "bytes": 411225,
+      "sha256": "ff82e7f863cec0823ce5a8ad73a800b55198c92582a864b594d35ed4b25915ab"
+    },
+    "history-080.bin.pack": {
+      "bytes": 485425,
+      "sha256": "584d1542bd5f9e74f8a60e053f2143cdd1ba5ab836f730288d0acf0a30187a7c"
+    },
+    "history-081.bin.pack": {
+      "bytes": 290970,
+      "sha256": "99830a128163f7b6bd739d772cfa759b0a545dfb8ad9f51772bd5258ae7aa612"
+    },
+    "history-082.bin.pack": {
+      "bytes": 328259,
+      "sha256": "0d93d55bf31e77918a72d162ced5cb4730d7677fa4cd693384210b6dcfdafe0b"
+    },
+    "history-083.bin.pack": {
+      "bytes": 377053,
+      "sha256": "54bf78ce414e241d2088c52629952b01a8b4697409537439e47a0194ad603943"
+    },
+    "history-084.bin.pack": {
+      "bytes": 374074,
+      "sha256": "15067e26dae3aead86c78e35ae7005ef2b715fb296587a6a33135559fe16199b"
+    },
+    "history-085.bin.pack": {
+      "bytes": 517335,
+      "sha256": "52dc61ddb4388e9afee549aefdd7c9344e45f222206864b02bb26995ab2ba0ef"
+    },
+    "history-086.bin.pack": {
+      "bytes": 374598,
+      "sha256": "8eb7e22eb8b57977691241bcff3c26b50218e0797176d33ee028608889002dc9"
+    },
+    "history-087.bin.pack": {
+      "bytes": 351023,
+      "sha256": "499ef5ad97651641871d654c164d0e2706101310a7223a0b0a1b7a47ed374339"
+    },
+    "history-088.bin.pack": {
+      "bytes": 460692,
+      "sha256": "063fede9b790f5eb30787ee8cbc45b3baee9769e84c84d6783537702878a8113"
+    },
+    "history-089.bin.pack": {
+      "bytes": 351518,
+      "sha256": "1c3aa32303f6d7dc7d2537a6266f1ef677a012dfea23c6538aa7d24d49c64415"
+    },
+    "history-090.bin.pack": {
+      "bytes": 435791,
+      "sha256": "95ab065bce7f7c7a2e3c35b752ea326d788a7aeee67e5a7a9271e1f09714ab96"
+    },
+    "history-091.bin.pack": {
+      "bytes": 424056,
+      "sha256": "28ecde2ca6a7a8635448cdf70782756578997be58bb932f890b11b625f0e30b9"
+    },
+    "history-092.bin.pack": {
+      "bytes": 425526,
+      "sha256": "41ca68dd6f0076ee611d170937e0d7a74dd3d551d4b9e2108afbaf33c2125f92"
+    },
+    "history-093.bin.pack": {
+      "bytes": 334906,
+      "sha256": "9e5514c87cb0ca71f4796cc7df5b63b0e3f89e75a8d826fe7283fd5222b6be6b"
+    },
+    "history-094.bin.pack": {
+      "bytes": 420222,
+      "sha256": "02856bac2279ff13b7041f24cc8a665199602e5bdd08aeb1cb709d746ef3180a"
+    },
+    "history-095.bin.pack": {
+      "bytes": 309581,
+      "sha256": "de825f88b2c0e4882b82cb668c51d19c05e2524dda33066597cedb3f5ed932f7"
+    },
+    "history-096.bin.pack": {
+      "bytes": 422615,
+      "sha256": "5dc3b37b8f27efba9185f193edcf94173cb42cf9da274b85dddd6aae12a7eb07"
+    },
+    "history-097.bin.pack": {
+      "bytes": 405562,
+      "sha256": "f59583832c8e9cf67e169a2b1a080fe2cd3247eb8155b9b85ecf89c74f2aad70"
+    },
+    "history-098.bin.pack": {
+      "bytes": 353811,
+      "sha256": "0126432b9d3e15922799f582a327a99e0b227d0662d422d85799663caef7030e"
+    },
+    "history-099.bin.pack": {
+      "bytes": 418648,
+      "sha256": "60bfe33a850151c4ccd68a077f2c84b41bfcc29a0693b42eaf0ed83245d6312f"
+    },
+    "history-100.bin.pack": {
+      "bytes": 316778,
+      "sha256": "5306a34c6d55ef28853dc65dccd02f90a179cf2de8aee4e95b3eab9134b6c426"
+    },
+    "history-101.bin.pack": {
+      "bytes": 339208,
+      "sha256": "80c1ed36ef968a2a1f1283e406b959b4ac340a3fff565832a530d18cf440eccb"
+    },
+    "history-102.bin.pack": {
+      "bytes": 467292,
+      "sha256": "439968f16f60b69c7c68c3844fface2577126c8a70723551800630b3ef92903d"
+    },
+    "history-103.bin.pack": {
+      "bytes": 329564,
+      "sha256": "299bfafa38a844afef2db9bbe51c51a4c42b906516357210eb02d2173b87a538"
+    },
+    "history-104.bin.pack": {
+      "bytes": 383511,
+      "sha256": "ee1ee239eaf65ab805a1d196eca8998819317ae199e6ff8010e634630af70b8d"
+    },
+    "history-105.bin.pack": {
+      "bytes": 367871,
+      "sha256": "cc6b26d5943e12c61fa55e92abc52f06613cbe41d23a498857b498797a1acc74"
+    },
+    "history-106.bin.pack": {
+      "bytes": 336237,
+      "sha256": "cbaf2e0d2550e7e15cc7f7cf1c283ed6d2aba0f61adebbb42bde145abcdbaf93"
+    },
+    "history-107.bin.pack": {
+      "bytes": 357022,
+      "sha256": "556a2cd1656dfc5464aa80c2c0aea2555040b46e62c9732eb0e083586a750da3"
+    },
+    "history-108.bin.pack": {
+      "bytes": 388829,
+      "sha256": "a940bc503b7afb454f858b3920a48bd5b1113725c6e7b90545cfb91a485428bc"
+    },
+    "history-109.bin.pack": {
+      "bytes": 467510,
+      "sha256": "7f97dee637883a3a9711102bb4041ba7a725cd2c4370bc24463d72bcef8a5112"
+    },
+    "history-110.bin.pack": {
+      "bytes": 403291,
+      "sha256": "5d6ec3b4b7ad80c2125a8d70c3c71ec2fbad1508eb26c7f85bdfe27b99544b9b"
+    },
+    "history-111.bin.pack": {
+      "bytes": 468082,
+      "sha256": "9d9412a859235963ce061142da342d6b2b2d88441d62dbef45d790085e3e5e69"
+    },
+    "history-112.bin.pack": {
+      "bytes": 490631,
+      "sha256": "e7d86899f88cce33bf0508377434adf4ae06c90071ca794ece0f51512883ca45"
+    },
+    "history-113.bin.pack": {
+      "bytes": 432192,
+      "sha256": "59fa9a3c8e1f4bb1ac70cd9f89987a740b12f3e09fc3ba784ff2be90e38a46cc"
+    },
+    "history-114.bin.pack": {
+      "bytes": 393907,
+      "sha256": "ce548a4a2989be2441e15949fa3f3ad2035e444da00f5703eae8f07992b4824c"
+    },
+    "history-115.bin.pack": {
+      "bytes": 450785,
+      "sha256": "97bc46a7d1cfb8faead23cf76bf41bd0c66093c2e5d1f4c482f86c85a61e0118"
+    },
+    "history-116.bin.pack": {
+      "bytes": 339252,
+      "sha256": "5309a0a18058fb9408d152e1e9da254ed9b71089654f906ac95260112ad03cb3"
+    },
+    "history-117.bin.pack": {
+      "bytes": 481515,
+      "sha256": "3d27061f2efa1165e8a39d6e9ef18ae96066f010fb1b6bd20371a6c96143ed10"
+    },
+    "history-118.bin.pack": {
+      "bytes": 403328,
+      "sha256": "d4c8ca1150ae854cc2e9ab75491c5e24897738c14f73b6cdaa013a99c422241b"
+    },
+    "history-119.bin.pack": {
+      "bytes": 417252,
+      "sha256": "53500880739b87b0c38df9487f97d02bf0c8419a8093c6664dda4b8d15be46ce"
+    },
+    "history-120.bin.pack": {
+      "bytes": 490067,
+      "sha256": "87bc36602a44aa13e6c8bf81a996c87d70a501049ed2c630fc44eefec3d14a03"
+    },
+    "history-121.bin.pack": {
+      "bytes": 382285,
+      "sha256": "95141dda0d4f742c5f5810e9cc44fb59b78cab83f82d821548f575c91df618a8"
+    },
+    "history-122.bin.pack": {
+      "bytes": 486588,
+      "sha256": "9429cec522b55a030c907fa7baed3bd97af7170e271e9e147f2b877bccf84aa4"
+    },
+    "history-123.bin.pack": {
+      "bytes": 323057,
+      "sha256": "39d1e561b2a4dad127d65ffa24de358408e68a4c90fe357e7cb88b43c989eebf"
+    },
+    "history-124.bin.pack": {
+      "bytes": 417214,
+      "sha256": "8e9341aeb3a3fb56cbe6716518fb2a2c98f144b258c26681283e112c71113cca"
+    },
+    "history-125.bin.pack": {
+      "bytes": 433909,
+      "sha256": "11b7041eb7418f3f11cb4664b128b9aff94c3d67998bfdeb5dbf2961dc08fa9b"
+    },
+    "history-126.bin.pack": {
+      "bytes": 328728,
+      "sha256": "9bcbc7ff0e6dad6c1ee430ca796c1e27e1255004a7ca824274290319414c9eb6"
+    },
+    "history-127.bin.pack": {
+      "bytes": 302593,
+      "sha256": "8132f782d11ad9d764b04d7ca035e9fe10973b8a5136bb0d54398c6a6752b7eb"
+    },
+    "profiles.json.pack": {
+      "bytes": 3862697,
+      "sha256": "d0d0359ea0c371a4c02fe8f117f11e0a54c6ebc5d4c356817b871dce98972e21"
+    }
+  }
+}

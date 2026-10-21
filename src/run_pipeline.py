@@ -20,6 +20,7 @@ STEPS = [
     "create_product_profiles.py", "create_category_insights.py",
     "validate_analysis_data.py", "export_dashboard_data.py",
     "validate_product_access.py",
+    "export_web_data.py", "validate_web_export.py",
 ]
 
 

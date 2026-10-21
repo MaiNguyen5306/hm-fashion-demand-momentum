@@ -4,6 +4,19 @@ This project analyzes how fashion products gain, sustain, and lose observed dema
 
 The analytical pipeline is implemented. The Streamlit Executive Overview uses tracked summary CSVs; Demand Momentum and Product Lifecycle Explorer pages remain planned.
 
+The current website target is **React/Vite on Vercel**, with deployment and final UI/UX deferred. A functional local sample now lives in `web/`, using a complete static product-history export. See [Vercel migration assessment](VERCEL_READINESS.md) for the re-evaluation, data delivery, and hosting prerequisites. Streamlit is retained as a local reference.
+
+```bash
+.venv/bin/python src/export_web_data.py
+.venv/bin/python src/validate_web_export.py
+npm --prefix web ci
+npm --prefix web run dev
+```
+
+Open `http://127.0.0.1:5173`. The web export covers every eligible product, not just the 30-example Streamlit artifact. Generated web data and builds remain ignored; fresh clones must generate them before building. Node 24 is the locally tested runtime.
+
+The current local website is a guided case-study draft with five sections: Home, Explore demand, Compare histories, Categories, and About the analysis. It opens with two real swimwear histories, then offers question-led exploration. Comparison separates normalized shapes, accumulated shares, and actual sales scale. Headline facts use verified observations and state their populations; detailed metrics and tables are available on demand. Deployment remains deferred.
+
 ## Local setup
 
 The current local setup uses Python 3.14. Install the pinned dependencies in an isolated environment:
@@ -15,6 +28,18 @@ python3 -m venv .venv
 ```
 
 The overview needs only `outputs/`. Raw CSVs and processed Parquet files are excluded from Git to protect against accidental commits of large datasets. The `.gitkeep` placeholders preserve the data directory structure; `.gitignore` provides the protection. No raw data have been committed or pushed by the setup work.
+
+## Local data preview
+
+After rebuilding the processed data, start the separate inspection app:
+
+```bash
+.venv/bin/python -m streamlit run dashboard/preview.py --server.address 127.0.0.1 --server.port 8502 --browser.gatherUsageStats false
+```
+
+Open `http://127.0.0.1:8502`. This basic local preview has a searchable product browser, category/type/profile/tier filters, lifecycle metrics, demand/momentum/cumulative charts, daily CSV downloads, and category comparison tables with explicit denominators. All 44,014 eligible product histories are available, with 100 products per browser page. Date selection trims display rows while preserving full-history accumulation, normalization, and ranks. Data are cached with source-file modification signatures so regenerated files invalidate the cache.
+
+The Executive Overview remains available through `dashboard/app.py`. The preview has no hosting setup or deployment. Preview integration tests run against local processed data and are skipped in clones without those files.
 
 ## Restore and reproduce the analysis
 
@@ -46,6 +71,8 @@ For individual stages, use `.venv/bin/python src/<filename>` in this order. Buil
 14. `validate_analysis_data.py`
 15. `export_dashboard_data.py`
 16. `validate_product_access.py`
+17. `export_web_data.py`
+18. `validate_web_export.py`
 
 Reference totals in the tracked outputs are 31,788,324 units across 104,547 purchased articles. The momentum population requires at least 30 active sales days and 100 units: 44,014 articles, 29,996,706 units, and 15,380,104 continuous article-day rows. Of these articles, 31,833 pass the boundary-based complete-observed-lifecycle rule.
 

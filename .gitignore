@@ -241,3 +241,9 @@ Thumbs.db
 
 # Generated dashboard artifacts: inspect size and validation before tracking
 dashboard/data/
+
+# Local web dependencies, builds, and generated analytical assets
+web/node_modules/
+web/dist/
+web/public/data/
+web/.vercel/
