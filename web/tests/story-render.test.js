@@ -18,7 +18,9 @@ test('reference homepage renders live copy and working navigation without analyt
     assert.match(markup,/\/art\/home-reference\.png/);
     for(const href of ['#/home','#/explore','#/compare','#/categories','#/about','#/explore?question=lasting'])assert.ok(markup.includes(`href="${href}"`));
     assert.ok(!markup.includes('scope-strip'));
-    assert.ok(markup.includes('≈63%'));
+    assert.ok(markup.includes('63%'));
+    assert.ok(!markup.includes('≈63%'));
+    assert.ok(markup.includes('Illustrative curve')); 
     assert.equal((markup.match(/<h1 /g)||[]).length,1);
   } finally {await server.close();}
 });

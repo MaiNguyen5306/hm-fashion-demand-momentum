@@ -55,21 +55,52 @@ export default function ReferenceHome() {
         )}
       </div>
     </section>
-    <section className="discovery-section" aria-labelledby="discovery-title">
-      <div className="discovery-panel">
-        <span className="discovery-pill">Demand study</span>
-        <h2 id="discovery-title">The peak isn’t the<br/><em>end of the story.</em></h2>
-        <p className="discovery-introduction">Sales often keep accumulating long after<br className="discovery-break"/> demand reaches its highest point.</p>
-        <div className="discovery-statistic">
-          {/* Validated export: median post_peak_share_pct = 62.65 across 31,833 boundary-complete histories. */}
-          <strong>≈63%</strong>
-          <p>Median share of observed units sold<br className="discovery-break"/> after the smoothed demand peak.</p>
-        </div>
-        <div className="discovery-panel-footer">
-          <p>Across 31,833 eligible histories passing dataset-boundary checks.</p>
-          <a href="#/explore?question=lasting">Explore the histories →</a>
-        </div>
+    <section className="lily-discovery" aria-labelledby="lily-discovery-title">
+      <div className="lily-discovery-photo">
+        <img src="/art/discovery-lily.png" alt="" width="1672" height="941" loading="lazy"/>
+        <h2 id="lily-discovery-title">The peak isn’t the<br/><em>end of the story.</em></h2>
       </div>
+      <div className="lily-discovery-details">
+        <div className="lily-discovery-story">
+          <span className="lily-discovery-eyebrow">Demand study</span>
+          {/* Rounded from the validated product-level median of 62.65%. */}
+          <strong>63%</strong>
+          <p>Median share of observed units sold after the smoothed demand peak.</p>
+          <p className="lily-discovery-description">Sales often keep accumulating after demand reaches its highest point.</p>
+        </div>
+        <figure className="lily-discovery-chart">
+          <svg viewBox="0 0 700 390" role="img" aria-labelledby="lily-chart-title lily-chart-description">
+            <title id="lily-chart-title">Sales continue after the peak</title>
+            <desc id="lily-chart-description">Illustrative curve, not an individual product history. A smoothed demand peak is followed by a long declining tail. The shaded region indicates sales after the peak, without encoding the population median.</desc>
+            <path d="M205 75 C260 75 275 195 365 244 S535 310 670 320 L670 340 L205 340 Z" fill="#f5e0e6" fillOpacity=".65"/>
+            <path d="M20 330 C95 310 140 75 205 75 S275 195 365 244 S535 310 670 320" fill="none" stroke="#111" strokeWidth="2.5"/>
+            <path d="M20 340 H675" fill="none" stroke="#111" strokeWidth="1"/>
+            <path d="M205 75 V340" fill="none" stroke="#555" strokeWidth="1" strokeDasharray="4 4"/>
+            <circle cx="205" cy="75" r="5" fill="#111"/>
+            <text x="335" y="195" fill="#111" fontSize="19">After the peak</text>
+            <text x="350" y="380" textAnchor="middle" fill="#111" fontSize="16">Time since first observed sale →</text>
+          </svg>
+          <figcaption>Illustrative curve · not an individual product history</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section className="catalog-invitation" aria-label="Dataset scale and exploration">
+      <dl className="catalog-scale">
+        <div className="catalog-scale-card catalog-scale-purchases">
+          <span className="catalog-scale-star" aria-hidden="true">★</span>
+          <dt>purchases studied</dt><dd>31.8 million</dd>
+        </div>
+        <div className="catalog-scale-card catalog-scale-histories">
+          <span className="catalog-scale-star" aria-hidden="true">★</span>
+          <dt>eligible product histories</dt><dd>44,014</dd>
+        </div>
+        <div className="catalog-scale-card catalog-scale-period">
+          <span className="catalog-scale-star" aria-hidden="true">★</span>
+          <dt>dataset period</dt>
+          <dd><time dateTime="2018-09">September 2018</time> -<br/><time dateTime="2020-09">September 2020</time></dd>
+        </div>
+      </dl>
+      <a className="catalog-explore" href="#/explore">Explore now <span aria-hidden="true">→</span></a>
     </section>
     </main>
   </div>;
