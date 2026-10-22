@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { dayString, filterHistory, filterProducts, loadDataset, loadProductHistory, toCSV } from './data.js';
 import './style.css';
 import ReferenceHome from './ReferenceHome.jsx';
+import ExploreDemand from './ExploreDemand.jsx';
 
 import { Chart, Download, Table, number } from './components.jsx';
 import { Compare, CategoryBars, QuestionCards, QUESTIONS, storySentence } from './story.jsx';
@@ -22,10 +23,8 @@ function Details({ profile: p, dataset }) {
   const metrics = [['Observed units', p.total_units], ['Observed span (days)', p.observed_lifespan_days], ['Selling days', p.active_sales_days],
     ['Selling-day rate (%)', p.active_day_rate_pct], ['Days to 50%', p.days_to_50_pct], ['Days to 80%', p.days_to_80_pct],
     ['Strongest 7-day share (%)', p.max_7d_demand_share_pct], ['Post-smoothed-peak share (%)', p.post_peak_share_pct]];
-  return <article><h2>{p.prod_name}</h2><p><strong>{p.article_id}</strong> · {p.product_type_name} · {p.garment_group_name}</p>
-    <p className="product-story">{storySentence(p)}</p><p className="muted">{p.lifecycle_profile} · {p.momentum_tier}</p>
-    {!p.complete_lifecycle && <p className="notice">This observed lifecycle touches a dataset boundary. Its available sales may omit demand outside the observation period.</p>}
-    <dl className="metrics">{[metrics[0],metrics[5],metrics[6]].map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{number(value)}</dd></div>)}</dl><details><summary>More product measures</summary><dl className="metrics">{metrics.filter((_,i) => ![0,5,6].includes(i)).map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{number(value)}</dd></div>)}</dl></details>
+  return <article className="explore-technical-details">
+    <details><summary>More product measures</summary><dl className="metrics">{metrics.filter((_,i) => ![0,5].includes(i)).map(([label,value]) => <div key={label}><dt>{label}</dt><dd>{number(value)}</dd></div>)}</dl>
     <p>Raw peak: <strong>{dayString(p.raw_peak_date)}</strong> ({number(p.raw_peak_daily_units)} units). Smoothed peak: <strong>{dayString(p.smoothed_peak_date)}</strong> ({number(p.peak_smoothed_demand)} units/day). Ties use the earliest date.</p>
     <div className="controls"><label>Display from<input type="date" value={start} min={dayString(p.first_sale_date)} max={dayString(p.last_sale_date)} onChange={e => setStart(e.target.value)}/></label>
       <label>Display through<input type="date" value={end} min={dayString(p.first_sale_date)} max={dayString(p.last_sale_date)} onChange={e => setEnd(e.target.value)}/></label>
@@ -48,27 +47,10 @@ function Details({ profile: p, dataset }) {
       {tab === 'Daily data' && <><Download rows={rows} filename={`hm_${p.article_id}_${start}_${end}.csv`}>Download displayed daily rows</Download>
         <Table rows={rows} caption={`${rows.length} displayed daily observations`} fields={Object.keys(rows[0]).map(key => [key,key])}/></>}
     </>}
+    </details>
   </article>;
 }
 
-function Explorer({ dataset, question = 'lasting', article = '' }) {
-  const [filters, setFilters] = useState({search:article,group:'',type:'',profile:article ? '' : (question === 'spikes' ? 'Rapid Spike' : question === 'lasting' ? 'Sustained Performer' : ''),tier:'',complete:!article && ['lasting','spikes'].includes(question)});
-  const [page, setPage] = useState(1), [picked, setPicked] = useState('');
-  const change = (key, value) => { setFilters(old => ({...old,[key]:value,...(key === 'group' ? {type:''} : {})})); setPage(1); setPicked(''); };
-  const filtered = useMemo(() => filterProducts(dataset.profiles, filters), [dataset, filters]);
-  const pageRows = filtered.slice((page - 1) * 100, page * 100), pages = Math.ceil(filtered.length / 100);
-  const selected = filtered.find(p => p.article_id === picked) || pageRows[0];
-  const types = filters.group ? dataset.profiles.filter(p => p.garment_group_name === filters.group) : dataset.profiles;
-  return <><div className="page-heading"><span className="eyebrow">Explore demand</span><h1>{article ? 'Follow this product’s history.' : (QUESTIONS.find(q => q.id === question)?.title || 'Follow a product’s demand story.')}</h1><p>Start with a question. Explore a real history, then look closer at the evidence.</p></div><QuestionCards compact/><details className="filter-panel"><summary>Find a product or refine this selection</summary><div className="filters"><label>Article ID or product name<input type="search" value={filters.search} onChange={e => change('search',e.target.value)} placeholder="Search all eligible products"/></label>
-    {[['group','Garment group',dataset.profiles,'garment_group_name'],['type','Product type',types,'product_type_name'],['profile','Lifecycle profile',dataset.profiles,'lifecycle_profile'],['tier','Momentum tier',dataset.profiles,'momentum_tier']].map(([key,label,source,field]) => <label key={key}>{label}<select value={filters[key]} onChange={e => change(key,e.target.value)}><option value="">All</option>{options(source,field).map(value => <option key={value}>{value}</option>)}</select></label>)}
-    <label className="check"><input type="checkbox" checked={filters.complete} onChange={e => change('complete',e.target.checked)}/>Complete observed lifecycles only</label></div></details>
-    <p role="status">{number(filtered.length)} matching products of {number(dataset.profiles.length)} eligible products.</p>
-    {!filtered.length ? <p>No products match. Clear the search or broaden a filter.</p> : <><div className="controls"><label>Article on page {page}<select value={selected.article_id} onChange={e => setPicked(e.target.value)}>{pageRows.map(p => <option value={p.article_id} key={p.article_id}>{p.article_id} · {p.prod_name}</option>)}</select></label>
-      <button disabled={page === 1} onClick={() => { setPage(page - 1); setPicked(''); }}>Previous page</button><span>Page {page} of {pages}</span><button disabled={page === pages} onClick={() => { setPage(page + 1); setPicked(''); }}>Next page</button></div>
-      <details><summary>Matching product table (100 per page)</summary><Table rows={pageRows} fields={['article_id','prod_name','garment_group_name','lifecycle_profile','momentum_tier','total_units'].map(key => [key,key])}/></details>
-      <Details key={selected.article_id} profile={selected} dataset={dataset}/></>}
-  </>;
-}
 
 function Categories({ dataset }) {
   const [group, setGroup] = useState(''), [minimum, setMinimum] = useState(100);
@@ -99,7 +81,7 @@ function App() {
   if (route.page === 'home') return <ReferenceHome/>;
   const navigation = [['home','Home'],['explore','Explore demand'],['compare','Compare histories'],['categories','Categories'],['about','About the analysis']];
   return <><a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content').focus(); }}>Skip to content</a><header className="site-header"><a className="brand" href="#/home"><span className="brand-mark">H&M</span><span>Demand / Momentum<small>A retail analytics case study</small></span></a><nav aria-label="Main navigation">{navigation.map(([page,label]) => <a key={page} href={`#/${page}`} aria-current={route.page === page ? 'page' : undefined}>{label}</a>)}</nav><span className="draft-label">LOCAL DRAFT</span></header>
-    <main id="main-content" tabIndex={-1}>{error ? <section role="alert"><h2>Unable to load data</h2><p>{error}</p><button onClick={() => window.location.reload()}>Retry</button></section> : !dataset ? <div className="loading-page" role="status"><span className="eyebrow">H&M demand stories</span><h1>There’s more to demand than its peak.</h1><p>Preparing the product histories…</p></div> : route.page === 'explore' ? <Explorer key={route.params.toString()} dataset={dataset} question={route.params.get('question') || 'lasting'} article={route.params.get('article') || ''}/> : route.page === 'compare' ? <Compare key={route.params.toString()} dataset={dataset} left={route.params.get('left')} right={route.params.get('right')} initialMode={route.params.get('mode') === 'cumulative' ? 'cumulative' : 'shape'}/> : route.page === 'categories' ? <Categories dataset={dataset}/> : route.page === 'about' ? <Notes dataset={dataset}/> : <section><h1>That page isn’t here.</h1><a href="#/home">Back to the story</a></section>}</main>
+    <main id="main-content" tabIndex={-1}>{error ? <section role="alert"><h2>Unable to load data</h2><p>{error}</p><button onClick={() => window.location.reload()}>Retry</button></section> : !dataset ? <div className="loading-page" role="status"><span className="eyebrow">H&M demand stories</span><h1>There’s more to demand than its peak.</h1><p>Preparing the product histories…</p></div> : route.page === 'explore' ? <ExploreDemand renderDetails={profile => <Details profile={profile} dataset={dataset}/>} key={route.params.toString()} dataset={dataset} question={route.params.get('question') || 'lasting'} article={route.params.get('article') || ''}/> : route.page === 'compare' ? <Compare key={route.params.toString()} dataset={dataset} left={route.params.get('left')} right={route.params.get('right')} initialMode={route.params.get('mode') === 'cumulative' ? 'cumulative' : 'shape'}/> : route.page === 'categories' ? <Categories dataset={dataset}/> : route.page === 'about' ? <Notes dataset={dataset}/> : <section><h1>That page isn’t here.</h1><a href="#/home">Back to the story</a></section>}</main>
     <footer><span>H&M Fashion Demand Momentum</span><p>Historical observations, 2018–2020. An independent analysis of the H&M Kaggle dataset.</p><a href="#/about">Data & methodology →</a></footer></>;
 }
 
