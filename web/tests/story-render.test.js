@@ -7,6 +7,21 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 
 const root=new URL('..',import.meta.url).pathname;
+
+test('reference homepage renders live copy and working navigation without analytical data', async()=>{
+  const server=await createServer({root,server:{middlewareMode:true,ws:false},appType:'custom'});
+  try {
+    const {default:ReferenceHome}=await server.ssrLoadModule('/src/ReferenceHome.jsx');
+    const markup=renderToStaticMarkup(React.createElement(ReferenceHome));
+    assert.match(markup,/Demand,/);
+    assert.match(markup,/beyond the peak\./);
+    assert.match(markup,/\/art\/home-reference\.png/);
+    for(const href of ['#/home','#/explore','#/compare','#/categories','#/about','#/explore?question=lasting'])assert.ok(markup.includes(`href="${href}"`));
+    assert.ok(!markup.includes('scope-strip'));
+    assert.ok(markup.includes('≈63%'));
+    assert.equal((markup.match(/<h1 /g)||[]).length,1);
+  } finally {await server.close();}
+});
 let dataset;
 try {
   const data=async name=>JSON.parse(gunzipSync(await readFile(new URL(`../public/data/${name}.json.pack`,import.meta.url))));

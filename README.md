@@ -15,7 +15,7 @@ npm --prefix web run dev
 
 Open `http://127.0.0.1:5173`. The web export covers every eligible product, not just the 30-example Streamlit artifact. Generated web data and builds remain ignored; fresh clones must generate them before building. Node 24 is the locally tested runtime.
 
-The current local website is a guided case-study draft with five sections: Home, Explore demand, Compare histories, Categories, and About the analysis. It opens with two real swimwear histories, then offers question-led exploration. Comparison separates normalized shapes, accumulated shares, and actual sales scale. Headline facts use verified observations and state their populations; detailed metrics and tables are available on demand. Deployment remains deferred.
+The current local website has five sections: Home, Explore demand, Compare histories, Categories, and About the analysis. The homepage currently matches the selected editorial visual reference; its lower storytelling sections are deferred. Question-led exploration and real-history comparisons remain accessible through navigation. Comparison separates normalized shapes, accumulated shares, and actual sales scale. Detailed metrics and tables are available on demand. Deployment remains deferred.
 
 ## Local setup
 

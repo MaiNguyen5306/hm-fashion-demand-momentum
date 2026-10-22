@@ -2,9 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { dayString, filterHistory, filterProducts, loadDataset, loadProductHistory, toCSV } from './data.js';
 import './style.css';
+import ReferenceHome from './ReferenceHome.jsx';
 
 import { Chart, Download, Table, number } from './components.jsx';
-import { Home, Compare, CategoryBars, QuestionCards, QUESTIONS, storySentence } from './story.jsx';
+import { Compare, CategoryBars, QuestionCards, QUESTIONS, storySentence } from './story.jsx';
 const options = (rows, key) => [...new Set(rows.map(p => p[key]).filter(Boolean))].sort();
 
 function Details({ profile: p, dataset }) {
@@ -94,10 +95,11 @@ function readRoute() {
 function App() {
   const [dataset, setDataset] = useState(null), [error, setError] = useState(''), [route, setRoute] = useState(readRoute);
   useEffect(() => { const onRoute = () => { setRoute(readRoute()); window.scrollTo(0,0); }; window.addEventListener('hashchange',onRoute); return () => window.removeEventListener('hashchange',onRoute); }, []);
-  useEffect(() => { let active = true; loadDataset().then(value => { if (active) setDataset(value); }).catch(e => { if (active) setError(e.message); }); return () => { active = false; }; }, []);
+  useEffect(() => { if (route.page === 'home' || dataset) return; let active = true; loadDataset().then(value => { if (active) setDataset(value); }).catch(e => { if (active) setError(e.message); }); return () => { active = false; }; }, [route.page, dataset]);
+  if (route.page === 'home') return <ReferenceHome/>;
   const navigation = [['home','Home'],['explore','Explore demand'],['compare','Compare histories'],['categories','Categories'],['about','About the analysis']];
   return <><a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content').focus(); }}>Skip to content</a><header className="site-header"><a className="brand" href="#/home"><span className="brand-mark">H&M</span><span>Demand / Momentum<small>A retail analytics case study</small></span></a><nav aria-label="Main navigation">{navigation.map(([page,label]) => <a key={page} href={`#/${page}`} aria-current={route.page === page ? 'page' : undefined}>{label}</a>)}</nav><span className="draft-label">LOCAL DRAFT</span></header>
-    <main id="main-content" tabIndex={-1}>{error ? <section role="alert"><h2>Unable to load data</h2><p>{error}</p><button onClick={() => window.location.reload()}>Retry</button></section> : !dataset ? <div className="loading-page" role="status"><span className="eyebrow">H&M demand stories</span><h1>There’s more to demand than its peak.</h1><p>Preparing the product histories…</p></div> : route.page === 'home' ? <Home dataset={dataset}/> : route.page === 'explore' ? <Explorer key={route.params.toString()} dataset={dataset} question={route.params.get('question') || 'lasting'} article={route.params.get('article') || ''}/> : route.page === 'compare' ? <Compare key={route.params.toString()} dataset={dataset} left={route.params.get('left')} right={route.params.get('right')} initialMode={route.params.get('mode') === 'cumulative' ? 'cumulative' : 'shape'}/> : route.page === 'categories' ? <Categories dataset={dataset}/> : route.page === 'about' ? <Notes dataset={dataset}/> : <section><h1>That page isn’t here.</h1><a href="#/home">Back to the story</a></section>}</main>
+    <main id="main-content" tabIndex={-1}>{error ? <section role="alert"><h2>Unable to load data</h2><p>{error}</p><button onClick={() => window.location.reload()}>Retry</button></section> : !dataset ? <div className="loading-page" role="status"><span className="eyebrow">H&M demand stories</span><h1>There’s more to demand than its peak.</h1><p>Preparing the product histories…</p></div> : route.page === 'explore' ? <Explorer key={route.params.toString()} dataset={dataset} question={route.params.get('question') || 'lasting'} article={route.params.get('article') || ''}/> : route.page === 'compare' ? <Compare key={route.params.toString()} dataset={dataset} left={route.params.get('left')} right={route.params.get('right')} initialMode={route.params.get('mode') === 'cumulative' ? 'cumulative' : 'shape'}/> : route.page === 'categories' ? <Categories dataset={dataset}/> : route.page === 'about' ? <Notes dataset={dataset}/> : <section><h1>That page isn’t here.</h1><a href="#/home">Back to the story</a></section>}</main>
     <footer><span>H&M Fashion Demand Momentum</span><p>Historical observations, 2018–2020. An independent analysis of the H&M Kaggle dataset.</p><a href="#/about">Data & methodology →</a></footer></>;
 }
 
